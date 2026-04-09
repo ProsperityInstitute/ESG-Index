@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FTSE 100 ESG Exposure Index</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script defer src="data.js"></script>
+  <script defer src="index.js"></script>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">↗</div>
+        <div class="brand-name">Share Reaction Index</div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="esg.html">Full ESG Index</a>
+        <a href="rankings.html">Environment</a>
+        <a href="social.html">Social</a>
+        <a href="governance.html">Governance</a>
+        <a href="sectors.html">Sectors</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="companies.html">Company Directory</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow">FTSE 100 ESG Exposure Analysis</div>
+        <h1>
+          Share Reaction
+          <span class="accent">Index 2026</span>
+        </h1>
+        <p>
+          A contrarian assessment of FTSE 100 companies, assessing the degree to which environment, social, and governance factors are prioritized over shareholders. Higher scores correspond to a higher prioritization of ESG commitments over shareholders.
+        </p>
+
+        <div class="hero-actions">
+          <a href="esg.html" class="btn btn-primary">View Rankings →</a>
+          <a href="methodology.html" class="btn btn-secondary">How It Works</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <h3>Interpretation</h3>
+        <p>
+          The Index is built from the live Environment and Social modules.
+          Governance-related indicators are embedded within those domains rather than scored separately.
+        </p>
+        <div class="signal-list" id="heroSignalList"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="wrap stats-grid" id="overviewStatsGrid"></div>
+  </div>
+
+  <section class="page">
+    <div class="wrap">
+      <div class="overview-feature-grid">
+        <div class="card overview-breakdown-card">
+          <div class="section-head overview-feature-head">
+            <div>
+              <h2>Index Breakdown</h2>
+              <p>
+                The live public composite is built from the current Environment and Social modules.
+              </p>
+            </div>
+          </div>
+
+          <div class="pillar-stack">
+            <a href="rankings.html" class="pillar-card-link">
+              <div class="pillar-card">
+                <div class="pillar-top">
+                  <div class="pillar-title">
+                    <span>Environment</span>
+                    <span class="pill">E</span>
+                  </div>
+                  <span class="pill" id="envAvgPill">0.0% avg.</span>
+                </div>
+                <div class="progress red">
+                  <span id="envAvgBar" style="width:0%"></span>
+                </div>
+                <div class="pillar-note">
+                  Climate Targets, Investment &amp; Transition, and Climate Reporting.
+                </div>
+              </div>
+            </a>
+
+            <a href="social.html" class="pillar-card-link">
+              <div class="pillar-card">
+                <div class="pillar-top">
+                  <div class="pillar-title">
+                    <span>Social</span>
+                    <span class="pill">S</span>
+                  </div>
+                  <span class="pill" id="socAvgPill">0.0% avg.</span>
+                </div>
+                <div class="progress red">
+                  <span id="socAvgBar" style="width:0%"></span>
+                </div>
+                <div class="pillar-note">
+                  DEI Targets &amp; Representation, Programmes &amp; Memberships, and Social Incentives.
+                </div>
+              </div>
+            </a>
+
+            <a href="esg.html" class="pillar-card-link">
+              <div class="pillar-card">
+                <div class="pillar-top">
+                  <div class="pillar-title">
+                    <span>Composite ESG</span>
+                    <span class="pill">ESG</span>
+                  </div>
+                  <span class="pill" id="esgAvgPill">0.0% avg.</span>
+                </div>
+                <div class="progress red">
+                  <span id="esgAvgBar" style="width:0%"></span>
+                </div>
+                <div class="pillar-note">
+                 Composite built from the live Index.
+                </div>
+              </div>
+            </a>
+          </div>
+
+         <div class="overview-distribution-block">
+  <div class="overview-distribution-head">
+    <h3 id="overviewDistributionTitle">Distribution of ESG Exposure</h3>
+    <p id="overviewDistributionSubtitle"></p>
+  </div>
+  <div id="overviewDistributionChart" class="overview-distribution-chart"></div>
+</div>
+
+</div> <!-- CLOSE overview-breakdown-card -->
+
+<div class="card overview-leaderboard-card">
+          <div class="section-head overview-feature-head">
+            <div>
+              <h2>ESG Exposure Performance</h2>
+              <p>The top 3 companies with the least and most ESG intensity under the current public model. Please visit the Rankings Page for more insight.</p>
+            </div>
+            <a href="esg.html" class="section-link">All rankings →</a>
+          </div>
+
+          <div class="leaderboard-list" id="overviewLeaderboard"></div>
+        </div>
+      </div>
+
+      <div class="construction" style="margin-top:18px;">
+        <strong>Governance treatment:</strong>
+        Governance-related indicators are treated as embedded within Environment and Social,
+        particularly in reporting, oversight, and incentive-related measures, rather than scored as a
+        standalone domain.
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      Prosperity Institute’s FTSE 100 <strong>ESG Exposure</strong> Index — Home.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESG Rankings | FTSE 100 ESG Exposure Index</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="data.js"></script>
+  <script defer src="esg.js"></script>
+</head>
+<body class="page-esg">
+  <header>
+    <div class="wrap nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">↗</div>
+        <div class="brand-name">Share Reaction Index</div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="esg.html" class="active">Full ESG Index</a>
+        <a href="rankings.html">Environment</a>
+        <a href="social.html">Social</a>
+        <a href="governance.html">Governance</a>
+        <a href="sectors.html">Sectors</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="companies.html">Company Directory</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page">
+    <div class="wrap-wide">
+      <div class="section-head">
+        <div>
+          <h1>Composite ESG Rankings</h1>
+          <p>
+            This page shows the ESG composite built from the live Environment and Social modules.
+            Lower ESG scores rank higher on the Index.
+          </p>
+          <button class="btn btn-score-info" id="scoreInfoBtn" aria-label="Open how to read scores information">
+            <span>?</span>
+            How to Read the Scores
+          </button>
+        </div>
+      </div>
+
+      <div class="construction" style="margin-bottom: 18px;">
+        <strong>Governance treatment:</strong>
+        Governance-related indicators are treated as embedded within Environment and Social, particularly in reporting, oversight, and incentive-related measures, rather than scored as a standalone public-facing domain.
+      </div>
+
+      <div class="toolbar">
+        <input class="control" id="searchInput" placeholder="Search company or ticker..." />
+        <select class="control" id="sectorFilter">
+          <option value="">All sectors</option>
+        </select>
+        <select class="control" id="tierFilter">
+          <option value="">All tiers</option>
+          <option value="best">Best</option>
+          <option value="good">Good</option>
+          <option value="moderate">Moderate</option>
+          <option value="poor">Poor</option>
+          <option value="wasteful">Wasteful</option>
+        </select>
+      </div>
+
+      <div class="table-card">
+        <div class="table-wrap">
+          <table class="score-table">
+            <thead class="table-header">
+              <tr class="header-row">
+                <th><button type="button" class="header-cell" data-sort="rank">Rank</button></th>
+                <th><button type="button" class="header-cell" data-sort="Company">Company</button></th>
+                <th><button type="button" class="header-cell" data-sort="Ticker">Ticker</button></th>
+                <th><button type="button" class="header-cell" data-sort="Sector">Sector</button></th>
+                <th><button type="button" class="header-cell" data-sort="Environment_Score">Environment</button></th>
+                <th><button type="button" class="header-cell" data-sort="Social_Score">Social</button></th>
+                <th><button type="button" class="header-cell" data-sort="ESG_Score">ESG Score</button></th>
+                <th><button type="button" class="header-cell" data-sort="tier">Tier</button></th>
+              </tr>
+            </thead>
+            <tbody class="table-body" id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <footer class="foot">
+        <div class="wrap-wide">
+          Prosperity Institute’s FTSE 100 <strong>ESG Exposure</strong> Index — Environment + Social public composite.
+        </div>
+      </footer>
+    </div>
+  </section>
+  <!-- Score Info Modal -->
+  <div id="scoreInfoModal" class="modal" role="dialog" aria-labelledby="scoreInfoTitle" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="scoreInfoTitle">How to Read the Scores</h2>
+        <button class="modal-close" id="scoreInfoClose" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>The FTSE 100 ESG Exposure Index uses a contrarian framework.</strong> Higher values reflect greater ESG-related commitments, programmes, incentives, and reporting intensity.</p>
+        
+        <h3>Score Interpretation</h3>
+        <p><strong>Lower scores rank higher on the Index.</strong> A company with a score of 0.15 ranks higher than a company with a score of 0.65.</p>
+        
+        <div class="score-guide">
+          <div class="score-tier">
+            <div class="tier-indicator best"></div>
+            <div>
+              <strong>Best</strong><br>
+              <span class="score-range">0.00 – 0.20</span>
+              <p>Minimal ESG intensity; fewer commitments and lower reporting.</p>
+            </div>
+          </div>
+          
+          <div class="score-tier">
+            <div class="tier-indicator good"></div>
+            <div>
+              <strong>Good</strong><br>
+              <span class="score-range">0.20 – 0.40</span>
+              <p>Low to moderate ESG intensity; selective programs and moderate reporting.</p>
+            </div>
+          </div>
+          
+          <div class="score-tier">
+            <div class="tier-indicator moderate"></div>
+            <div>
+              <strong>Moderate</strong><br>
+              <span class="score-range">0.40 – 0.60</span>
+              <p>Moderate ESG intensity; established programs and regular reporting.</p>
+            </div>
+          </div>
+          
+          <div class="score-tier">
+            <div class="tier-indicator poor"></div>
+            <div>
+              <strong>Poor</strong><br>
+              <span class="score-range">0.60 – 0.80</span>
+              <p>High ESG intensity; extensive commitments and comprehensive reporting.</p>
+            </div>
+          </div>
+          
+          <div class="score-tier">
+            <div class="tier-indicator wasteful"></div>
+            <div>
+              <strong>Wasteful</strong><br>
+              <span class="score-range">0.80 – 1.00</span>
+              <p>Maximum ESG intensity; extensive programs prioritizing ESG over shareholders.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>The Three Dimensions</h3>
+        <p><strong>Environment (E):</strong> Climate targets, investment in transition, and climate reporting.</p>
+        <p><strong>Social (S):</strong> DEI targets, workplace programs, and social incentives.</p>
+        <p><strong>Governance (G):</strong> Board diversity, executive compensation structures, and governance practices.</p>
+
+        <p style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-soft);">
+          For more details, visit the <a href="methodology.html" style="color: var(--green); font-weight: 600;">Methodology</a> page.
+        </p>
+      </div>
+    </div>
+  </div></body>
+</html>
