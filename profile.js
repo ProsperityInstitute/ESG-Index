@@ -180,7 +180,7 @@ function renderProfileHeader(company) {
     `${company.Company} · ${company.Ticker} · ${company.Sector}`;
 
   if (logo && logoShell) {
-    logo.src = `assets/logos/${String(company.Ticker).toUpperCase()}.png`;
+    logo.src = `assets/images/${String(company.Ticker).toUpperCase()}.png`;
     logo.alt = `${company.Company} logo`;
     logo.onload = () => {
       logoShell.hidden = false;

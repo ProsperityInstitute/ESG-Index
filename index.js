@@ -220,7 +220,7 @@ function renderLeaderboard(data) {
           <div class="lb-row" style="cursor: pointer;">
             <div class="lb-rank worst-rank">${100 - i}</div>
             <div class="lb-company">
-              <img src="assets/logos/${d.Ticker.toUpperCase()}.png" alt="${d.Company} logo" class="lb-logo" onerror="this.style.display='none'">
+              <img src="assets/images/${d.Ticker.toUpperCase()}.png" alt="${d.Company} logo" class="lb-logo" onerror="this.style.display='none'">
               <div class="name">${d.Company}</div>
               <div class="meta">${d.Sector}</div>
             </div>
@@ -239,7 +239,7 @@ function renderLeaderboard(data) {
           <div class="lb-row" style="cursor: pointer;">
             <div class="lb-rank best-rank">${i + 1}</div>
             <div class="lb-company">
-              <img src="assets/logos/${d.Ticker.toUpperCase()}.png" alt="${d.Company} logo" class="lb-logo" onerror="this.style.display='none'">
+              <img src="assets/images/${d.Ticker.toUpperCase()}.png" alt="${d.Company} logo" class="lb-logo" onerror="this.style.display='none'">
               <div class="name">${d.Company}</div>
               <div class="meta">${d.Sector}</div>
             </div>

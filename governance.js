@@ -159,7 +159,7 @@ function renderTable(rows) {
           <td>
             <div class="company-cell">
               <div class="company-name">
-                <img src="assets/logos/${r.Ticker.toUpperCase()}.png" alt="${r.Company} logo" class="company-logo" onerror="this.style.display='none'">
+                <img src="assets/images/${r.Ticker.toUpperCase()}.png" alt="${r.Company} logo" class="company-logo" onerror="this.style.display='none'">
                 <span>${r.Company}</span>
               </div>
             </div>

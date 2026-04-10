@@ -80,7 +80,7 @@ function renderTable() {
       <td>
         <div class="company-cell">
           <div class="company-name">
-            <img src="assets/logos/${d.Ticker.toUpperCase()}.png" alt="${d.Company} logo" class="company-logo" onerror="this.style.display='none'">
+            <img src="assets/images/${d.Ticker.toUpperCase()}.png" alt="${d.Company} logo" class="company-logo" onerror="this.style.display='none'">
             <span>${d.Company}</span>
           </div>
         </div>
