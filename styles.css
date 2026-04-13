@@ -797,8 +797,8 @@ body.page-governance,
 body.page-esg {
   --page-accent-rgb: 47, 139, 87;
   background:
-    radial-gradient(circle at top right, rgba(var(--page-accent-rgb), 0.08), transparent 30%),
-    radial-gradient(circle at 10% 22%, rgba(var(--page-accent-rgb), 0.04), transparent 22%),
+    radial-gradient(circle at top right, rgba(var(--page-accent-rgb), 0.11), transparent 32%),
+    radial-gradient(circle at 10% 22%, rgba(var(--page-accent-rgb), 0.06), transparent 24%),
     var(--bg);
 }
 
@@ -856,7 +856,7 @@ body.page-esg {
 
 .construction {
   margin-top: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(var(--page-accent-rgb, 47, 139, 87), 0.04) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(var(--page-accent-rgb, 47, 139, 87), 0.06) 100%);
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: 18px 20px;
@@ -1115,7 +1115,7 @@ a:hover .lb-row {
   border-radius: 24px;
   box-shadow: var(--shadow-strong);
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(var(--page-accent-rgb, 47, 139, 87), 0.035) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(var(--page-accent-rgb, 47, 139, 87), 0.05) 100%);
 }
 
 .table-wrap {
@@ -1126,7 +1126,7 @@ a:hover .lb-row {
 
 .table-header {
   border-bottom: 1px solid var(--line);
-  background: linear-gradient(180deg, #fbfcfa 0%, rgba(var(--page-accent-rgb, 47, 139, 87), 0.05) 100%);
+  background: linear-gradient(180deg, #fbfcfa 0%, rgba(var(--page-accent-rgb, 47, 139, 87), 0.07) 100%);
 }
 
 .score-table {
