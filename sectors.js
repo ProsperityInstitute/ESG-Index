@@ -133,6 +133,60 @@ function renderBarChart(sectors) {
   });
 }
 
+function renderPieChart(sectors) {
+  const palette = [
+    "#2f8b57",
+    "#4867c9",
+    "#6d4cc4",
+    "#d95d5d",
+    "#c6872f",
+    "#2f6f8b",
+    "#7a9e3d",
+    "#b45f8a",
+    "#5f6d82",
+    "#4f78e3",
+    "#9a6fd6",
+    "#db7a45"
+  ];
+
+  Plotly.newPlot("sectorPieChart", [
+    {
+      type: "pie",
+      labels: sectors.map((s) => s.sector),
+      values: sectors.map((s) => s.count),
+      sort: false,
+      direction: "clockwise",
+      hole: 0.24,
+      textinfo: "label+percent",
+      textposition: "outside",
+      automargin: true,
+      marker: {
+        colors: sectors.map((_, index) => palette[index % palette.length]),
+        line: {
+          color: "#ffffff",
+          width: 2
+        }
+      },
+      hovertemplate:
+        "<b>%{label}</b><br>Companies: %{value}<br>Share of index: %{percent}<extra></extra>"
+    }
+  ], {
+    paper_bgcolor: "rgba(0,0,0,0)",
+    plot_bgcolor: "rgba(0,0,0,0)",
+    margin: { l: 20, r: 20, t: 10, b: 10 },
+    showlegend: true,
+    legend: {
+      orientation: "h",
+      y: -0.08,
+      x: 0.5,
+      xanchor: "center"
+    }
+  }, {
+    responsive: true,
+    displayModeBar: false
+  });
+}
+
 function renderBoxPlot(sectors) {
   const traces = sectors.map(s => ({
     type: "box",
@@ -203,6 +257,7 @@ function initSectorsPage() {
   renderStats(sectors);
   renderTable(sectors);
   renderBarChart(sectors);
+  renderPieChart(sectors);
   renderBoxPlot(sectors);
   renderGroupedChart(sectors);
 }
