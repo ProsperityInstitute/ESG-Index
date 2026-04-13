@@ -701,6 +701,110 @@ const DIRECTORY_IR_EMAILS = {
   "WPP": "irteam@wpp.com"
 };
 
+const DIRECTORY_HQ_ADDRESSES = {
+  "3i": "1 Knightsbridge, London, SW1X 7LX, United Kingdom",
+  "Admiral Group": "Capital Tower, Greyfriars Road, Cardiff, CF10 3AZ, Wales, United Kingdom",
+  "Airtel Africa": "53-54 Grosvenor Street, London, W1K 3HU, United Kingdom",
+  "Alliance Witan": "River Court, 5 West Victoria Dock Road, Dundee, DD1 3JT, United Kingdom",
+  "Anglo American": "17 Charterhouse Street, London, EC1N 6RA, United Kingdom",
+  "Antofagasta": "103 Mount Street, London, W1K 2TJ, United Kingdom",
+  "Ashtead Group": "100 Cheapside, London, United Kingdom",
+  "Associated British Foods": "Weston Centre, 10 Grosvenor Street, London, W1K 4QY, United Kingdom",
+  "AstraZeneca": "1 Francis Crick Avenue, Cambridge Biomedical Campus, Cambridge, CB2 0AA, United Kingdom",
+  "Auto Trader Group": "No.3 Circle Square, Manchester, United Kingdom",
+  "Aviva": "80 Fenchurch Street, London, EC3M 4AE, United Kingdom",
+  "Babcock International Group": "33 Wigmore Street, London, W1U 1QX, United Kingdom",
+  "BAE Systems": "6 Carlton Gardens, London, SW1Y 5AD, United Kingdom",
+  "Barclays": "1 Churchill Place, London, E14 5HP, United Kingdom",
+  "Barratt Developments": "Barratt House, Cartwright Way, Forest Business Park, Bardon Hill, Coalville, Leicestershire, LE67 1UF, United Kingdom",
+  "Beazley": "22 Bishopsgate, London, EC2N 4BQ, United Kingdom",
+  "Berkeley Group Holdings": "Berkeley House, 19 Portsmouth Road, Cobham, Surrey, KT11 1JG, United Kingdom",
+  "BP": "1 St James's Square, London, SW1Y 4PD, United Kingdom",
+  "British American Tobacco": "Globe House, 4 Temple Place, London, WC2R 2PG, United Kingdom",
+  "British Land": "York House, 45 Seymour Street, London, W1H 7LX, United Kingdom",
+  "BT Group": "1 Braham Street, London, E1 8EE, United Kingdom",
+  "Bunzl": "York House, 45 Seymour Street, London, W1H 7JT, United Kingdom",
+  "Burberry Group": "Horseferry House, Horseferry Road, London, SW1P 2AW, United Kingdom",
+  "Centrica": "Millstream, Maidenhead Road, Windsor, Berkshire, SL4 5GD, United Kingdom",
+  "Coca-Cola HBC": "Turmstrasse 26, Zug, 6300, Switzerland",
+  "Compass Group": "Compass House, Guildford Street, Chertsey, Surrey, KT16 9BQ, United Kingdom",
+  "Convatec Group": "7th Floor, 20 Eastbourne Terrace, London, W2 6LG, United Kingdom",
+  "Croda International": "Cowick Hall, Snaith, Goole, East Yorkshire, DN14 9AA, United Kingdom",
+  "DCC plc": "DCC House, Leopardstown Road, Foxrock, Dublin 18, D18 PK00, Ireland",
+  "Diageo": "Lakeside Drive, Park Royal, London, NW10 7HQ, United Kingdom",
+  "Diploma": "10-11 Charterhouse Square, London, EC1M 6EE, United Kingdom",
+  "Endeavour Mining": "5 Young Street, London, W8 5EH, United Kingdom",
+  "Entain": "Alexandra House, 1 St Katherine's Way, London, E1W 1UY, United Kingdom",
+  "EasyJet": "Hangar 89, London Luton Airport, Luton, Bedfordshire, LU2 9PF, United Kingdom",
+  "Experian": "Newenham House, Northern Cross, Malahide Road, Dublin 17, D17 AY61, Ireland",
+  "F&C Investment Trust": "80 George Street, Edinburgh, EH2 3BU, United Kingdom",
+  "Fresnillo": "21 Upper Brook Street, London, W1K 7PY, United Kingdom",
+  "Games Workshop": "Willow Road, Lenton, Nottingham, NG7 2WS, United Kingdom",
+  "Glencore": "Baarermattstrasse 3, CH-6340 Baar, Switzerland",
+  "GSK": "79 New Oxford Street, London, WC1A 1DG, United Kingdom",
+  "Haleon": "Building 5, First Floor The Heights, Weybridge, Surrey, KT13 0NY, United Kingdom",
+  "Halma": "Misbourne Court, Rectory Way, Amersham, Buckinghamshire, HP7 0DE, United Kingdom",
+  "Hargreaves Lansdown": "One College Square South, Anchor Road, Bristol, BS1 5HL, United Kingdom",
+  "Hikma Pharmaceuticals": "13 Hanover Square, London, W1S 1HW, United Kingdom",
+  "Hiscox": "1 Great St Helen's, London, EC3A 6HX, United Kingdom",
+  "Howdens Joinery Group": "105 Wigmore Street, London, W1U 1QY, United Kingdom",
+  "HSBC Holdings": "8 Canada Square, London, E14 5HQ, United Kingdom",
+  "IMI plc": "Lakeside, Solihull Parkway, Birmingham Business Park, Birmingham, B37 7XZ, United Kingdom",
+  "Imperial Brands": "121 Winterstoke Road, Bristol, BS3 2LL, United Kingdom",
+  "Informa": "5 Howick Place, London, SW1P 1WG, United Kingdom",
+  "Intercontinental Hotels Group": "1 Windsor Dials, Arthur Road, Windsor, Berkshire, SL4 1RS, United Kingdom",
+  "Intermediate Capital Group": "Procession House, 55 Ludgate Hill, London, EC4M 7JW, United Kingdom",
+  "Intertek Group": "33 Cavendish Square, London, W1G 0PS, United Kingdom",
+  "International Cons. Airlines (IAG)": "Harmsworth House, 13-15 Bouverie Street, London, EC4Y 8DP, United Kingdom",
+  "JD Sports Fashion": "JD Sports House, Hollinsbrook Way, Pilsworth, Bury, Lancashire, BL9 8RR, United Kingdom",
+  "Kingfisher": "3 Sheldon Square, London, W2 6PX, United Kingdom",
+  "Land Securities": "100 Victoria Street, London, SW1E 5JL, United Kingdom",
+  "Legal & General": "One Coleman Street, London, EC2R 5AA, United Kingdom",
+  "Lloyds Banking Group": "25 Gresham Street, London, EC2V 7HN, United Kingdom",
+  "LondonMetric Property": "22 Manchester Square, London, W1U 3PY, United Kingdom",
+  "London Stock Exchange Group": "10 Paternoster Square, London, EC4M 7LS, United Kingdom",
+  "M&G": "10 Fenchurch Avenue, London, EC3M 5AG, United Kingdom",
+  "Marks & Spencer": "Waterside House, 35 North Wharf Road, London, W2 1NW, United Kingdom",
+  "Melrose Industries": "11th Floor, The Colmore Building, 20 Colmore Circus Queensway, Birmingham, B4 6AT, United Kingdom",
+  "Mondi": "Building 1, 1st Floor, Aviator Park, Station Road, Addlestone, Surrey, KT15 2PG, United Kingdom",
+  "National Grid": "1-3 Strand, London, WC2N 5EH, United Kingdom",
+  "NatWest Group": "250 Bishopsgate, London, EC2M 4AA, United Kingdom",
+  "Next plc": "Desford Road, Enderby, Leicester, LE19 4AT, United Kingdom",
+  "Pearson": "80 Strand, London, WC2R 0RL, United Kingdom",
+  "Pershing Square Holdings": "Fifth Floor, 40 Grosvenor Place, London, SW1X 7GG, United Kingdom",
+  "Persimmon": "Persimmon House, Fulford, York, YO19 4FE, United Kingdom",
+  "Phoenix Group": "1 Wythall Green Way, Wythall, Birmingham, B47 6WG, United Kingdom",
+  "Prudential": "1 Angel Court, London, EC2R 7AG, United Kingdom",
+  "Reckitt Benckiser": "103-105 Bath Road, Slough, Berkshire, SL1 3UH, United Kingdom",
+  "RELX": "1-3 Strand, London, WC2N 5JR, United Kingdom",
+  "Rentokil Initial": "Riverbank, Meadows Business Park, Blackwater, Camberley, Surrey, GU17 9AB, United Kingdom",
+  "Rightmove": "Wheat Wharf, 27a Shad Thames, London, SE1 2XY, United Kingdom",
+  "Rio Tinto": "6 St James's Square, London, SW1Y 4AD, United Kingdom",
+  "Rolls-Royce Holdings": "62 Buckingham Gate, London, SW1E 6AT, United Kingdom",
+  "Sage Group": "North Park, Newcastle upon Tyne, NE13 9AA, United Kingdom",
+  "Sainsbury's": "33 Holborn, London, EC1N 2HT, United Kingdom",
+  "Schroders": "1 London Wall Place, London, EC2Y 5AU, United Kingdom",
+  "Scottish Mortgage Trust": "Atria One, 144 Morrison Street, Edinburgh, EH3 8EX, United Kingdom",
+  "Segro": "234 Bath Road, Slough, Berkshire, SL1 4EE, United Kingdom",
+  "Severn Trent": "Severn Trent Centre, 2 St John's Street, Coventry, CV1 2LZ, United Kingdom",
+  "Shell plc": "Shell Centre, London, SE1 7NA, United Kingdom",
+  "Smith & Nephew": "15 Adam Street, London, WC2N 6LA, United Kingdom",
+  "Smiths Group": "4th Floor, 11-12 St James's Square, London, SW1Y 4LB, United Kingdom",
+  "Spirax-Sarco (Spirax Group)": "Charlton House, Cirencester Road, Cheltenham, Gloucestershire, GL53 8ER, United Kingdom",
+  "SSE plc": "Inveralmond House, 200 Dunkeld Road, Perth, PH1 3AQ, United Kingdom",
+  "St. James's Place": "St. James's Place House, 1 Tetbury Road, Cirencester, Gloucestershire, GL7 1FP, United Kingdom",
+  "Standard Chartered": "1 Basinghall Avenue, London, EC2V 5DD, United Kingdom",
+  "Taylor Wimpey": "Gate House, Turnpike Road, High Wycombe, Buckinghamshire, HP12 3NR, United Kingdom",
+  "Tesco": "Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, Hertfordshire, AL7 1GA, United Kingdom",
+  "Unilever": "100 Victoria Embankment, London, EC4Y 0DY, United Kingdom",
+  "Unite Group (United Group)": "1 St Ann's Place, Canons House, Bristol, BS2 9BA, United Kingdom",
+  "United Utilities Group": "Haweswater House, Lingley Mere Business Park, Lingley Green Avenue, Great Sankey, Warrington, WA5 3LP, United Kingdom",
+  "Vodafone Group": "Vodafone House, The Connection, Newbury, Berkshire, RG14 2FN, United Kingdom",
+  "Weir Group": "16 West Nile Street, Glasgow, G1 2RQ, United Kingdom",
+  "Whitbread": "Whitbread Court, Houghton Hall Business Park, Porz Avenue, Dunstable, Bedfordshire, LU5 5XE, United Kingdom",
+  "WPP": "9-12 Waterloo Place, London, SW1Y 4BE, United Kingdom"
+};
+
 function getCompanyMetadata(row) {
   const direct = MASTER_COMPANY_LIST[row.Company];
   if (direct) return direct;
@@ -721,6 +825,16 @@ function getCompanyMetadata(row) {
   return aliasKey ? MASTER_COMPANY_LIST[aliasKey] || {} : {};
 }
 
+function getCompanyHQAddress(companyName) {
+  if (DIRECTORY_HQ_ADDRESSES[companyName]) return DIRECTORY_HQ_ADDRESSES[companyName];
+
+  const normalizedName = String(companyName)
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/â€™/g, "'");
+
+  return DIRECTORY_HQ_ADDRESSES[normalizedName] || "";
+}
+
 function buildCompanyDirectoryRows() {
   return cappedData.map(row => {
     const meta = getCompanyMetadata(row);
@@ -730,7 +844,7 @@ function buildCompanyDirectoryRows() {
       Sector: row.Sector,
       Website: meta.Website || "",
       IR_Email: DIRECTORY_IR_EMAILS[row.Ticker] || "",
-      HQ_Address: ""
+      HQ_Address: getCompanyHQAddress(row.Company)
     };
   });
 }
