@@ -336,15 +336,8 @@ function renderProfileContacts(company) {
 
 function renderProfileOverview(company) {
   const content = getProfileContent(company.Ticker);
-  const summaryEl = document.getElementById("profileBusinessSummary");
   const marketCapEl = document.getElementById("profileMarketCap");
   const foundedEl = document.getElementById("profileFounded");
-
-  if (summaryEl) {
-    summaryEl.textContent = content
-      ? content.summary
-      : "Company background for this profile has not been added yet.";
-  }
 
   if (marketCapEl) {
     marketCapEl.textContent = content

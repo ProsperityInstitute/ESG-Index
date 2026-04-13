@@ -438,17 +438,13 @@ header {
   align-items: stretch;
 }
 
-.profile-company-overview,
 .profile-company-facts {
   padding: 28px 30px;
 }
 
-.profile-company-overview p {
-  max-width: none;
-}
-
 .profile-facts-grid {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -2209,6 +2205,10 @@ body.page-social .score-table th:nth-child(8) .header-cell {
   .wrap-wide {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .profile-facts-grid {
+    grid-template-columns: 1fr;
   }
 
   .profile-hero-title {
