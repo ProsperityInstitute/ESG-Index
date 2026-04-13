@@ -260,6 +260,156 @@ const PROFILE_CONTENT = {
     summary: "Diageo is a global leader in premium alcoholic beverages, producing and distributing a wide portfolio of spirits and beer brands across major international markets.",
     marketCap: "Approximately £31.88 billion",
     founded: "Incorporated on October 21, 1886"
+  },
+  "DPLM": {
+    summary: "Diploma is a value-add distributor supplying specialized products and services across a range of industrial end markets. Its model focuses on niche, high-margin distribution with technical support capabilities.",
+    marketCap: "Approximately GBP 8.96 billion",
+    founded: "Incorporated on December 24, 1999"
+  },
+  "EDV": {
+    summary: "Endeavour Mining is a gold producer with a concentrated operational footprint in West Africa, focused on large-scale, low-cost mining assets.",
+    marketCap: "Approximately GBP 11.80 billion",
+    founded: "Incorporated on March 21, 2021"
+  },
+  "ENT": {
+    summary: "Entain is a global sports betting and gaming group operating across online platforms and retail betting outlets, with a diversified geographic presence.",
+    marketCap: "Approximately GBP 3.37 billion",
+    founded: "Incorporated on January 5, 2010"
+  },
+  "EZJ": {
+    summary: "easyJet is a low-cost airline focused on short-haul passenger travel across Europe, operating a high-frequency, point-to-point route network.",
+    marketCap: "Approximately GBP 2.77 billion",
+    founded: "Incorporated on March 24, 2000"
+  },
+  "EXPN": {
+    summary: "Experian is a global information services company providing credit data, analytics, and decisioning solutions to businesses and consumers. Its offerings support risk management, identity verification, and financial inclusion.",
+    marketCap: "Approximately GBP 22.91 billion",
+    founded: "Incorporated on June 30, 2006"
+  },
+  "FCIT": {
+    summary: "F&C Investment Trust is a closed-ended investment company designed to deliver long-term capital growth through a diversified portfolio of global equities.",
+    marketCap: "Approximately GBP 5.98 billion",
+    founded: "Incorporated on March 15, 1879"
+  },
+  "FRES": {
+    summary: "Fresnillo is a precious metals mining company focused on the production of silver and gold, with core operations located in Mexico.",
+    marketCap: "Approximately GBP 26.03 billion",
+    founded: "Incorporated on August 15, 2007"
+  },
+  "GAW": {
+    summary: "Games Workshop is a designer and manufacturer of miniature wargaming products, supported by a strong intellectual property portfolio and licensing activities.",
+    marketCap: "Approximately GBP 6.29 billion",
+    founded: "Incorporated on December 9, 1991"
+  },
+  "GLEN": {
+    summary: "Glencore is a global commodities group engaged in both the production and marketing of natural resources, with integrated industrial and trading operations.",
+    marketCap: "Approximately GBP 66.24 billion",
+    founded: "Incorporated on March 14, 2011"
+  },
+  "GSK": {
+    summary: "GSK is a global biopharmaceutical company focused on developing medicines and vaccines across major therapeutic areas, with a strong emphasis on innovation and global health.",
+    marketCap: "Approximately GBP 86.59 billion",
+    founded: "Incorporated on December 6, 1999"
+  },
+  "HLN": {
+    summary: "Haleon is a consumer healthcare company focused on everyday health products, spanning categories such as oral health, vitamins and supplements, pain relief, respiratory, digestive, and skin health.",
+    marketCap: "Approximately GBP 32.35 billion",
+    founded: "Incorporated on October 20, 2021"
+  },
+  "HLMA": {
+    summary: "Halma is a technology group specializing in life-saving products and solutions across safety, environmental monitoring, and healthcare applications.",
+    marketCap: "Approximately GBP 15.77 billion",
+    founded: "Incorporated on April 13, 1894"
+  },
+  "HL": {
+    summary: "Hargreaves Lansdown is a UK-based investment and savings platform serving retail investors with brokerage, fund distribution, and wealth management services. The company has transitioned to private ownership and therefore does not currently have a public market capitalization.",
+    marketCap: "No current public market capitalization",
+    founded: "Incorporated on April 10, 1987"
+  },
+  "HIK": {
+    summary: "Hikma Pharmaceuticals is a multinational pharmaceutical company producing generic, branded, and specialty medicines, with key segments including injectables, branded products, and generics.",
+    marketCap: "Approximately GBP 3.77 billion",
+    founded: "Incorporated on September 8, 2005"
+  },
+  "HSX": {
+    summary: "Hiscox is an international specialist insurer underwriting a broad range of personal and commercial risks, with a focus on high-value and complex insurance segments.",
+    marketCap: "Approximately GBP 5.08 billion",
+    founded: "Incorporation date not yet verified"
+  },
+  "HWDN": {
+    summary: "Howden Joinery Group is a supplier of kitchens and joinery products, primarily serving trade professionals through a nationwide depot network.",
+    marketCap: "Approximately GBP 4.41 billion",
+    founded: "Incorporated on May 7, 1987"
+  },
+  "HSBC": {
+    summary: "HSBC Holdings is a global banking and financial services group, offering retail banking, commercial banking, investment banking, and wealth management services across international markets.",
+    marketCap: "Approximately GBP 226.90 billion",
+    founded: "Incorporated on January 1, 1959"
+  },
+  "IMI": {
+    summary: "IMI is a specialist engineering company focused on fluid and motion control technologies, serving industrial, energy, and process markets.",
+    marketCap: "Approximately GBP 6.76 billion",
+    founded: "Incorporated on February 2, 1962"
+  },
+  "IMB": {
+    summary: "Imperial Brands is a global tobacco company producing and distributing a range of nicotine products, including traditional combustibles and next-generation alternatives.",
+    marketCap: "Approximately GBP 24.20 billion",
+    founded: "Incorporated on August 6, 1996"
+  },
+  "INF": {
+    summary: "Informa is a business services company providing market intelligence, academic publishing, and events platforms across a range of industries.",
+    marketCap: "Approximately GBP 9.80 billion",
+    founded: "Incorporated on January 24, 2014"
+  },
+  "IHG": {
+    summary: "InterContinental Hotels Group is a global hospitality company operating a portfolio of hotel brands across multiple market segments, including luxury, premium, and midscale.",
+    marketCap: "Approximately USD 20.65 billion",
+    founded: "Incorporated on May 21, 2004"
+  },
+  "ICG": {
+    summary: "ICG (Intermediate Capital Group) is an alternative asset manager specializing in private debt, credit, and structured capital solutions.",
+    marketCap: "Approximately GBP 4.86 billion",
+    founded: "Incorporated on March 23, 1988"
+  },
+  "ITRK": {
+    summary: "Intertek Group is a provider of assurance, testing, inspection, and certification services supporting quality and compliance across global industries.",
+    marketCap: "Approximately GBP 5.77 billion",
+    founded: "Incorporated on August 9, 2001"
+  },
+  "IAG": {
+    summary: "International Consolidated Airlines Group (IAG) is a holding company for a portfolio of airline and aviation-related businesses, including full-service and low-cost carriers.",
+    marketCap: "Approximately GBP 16.97 billion",
+    founded: "Incorporated on December 17, 2009"
+  },
+  "JD": {
+    summary: "JD Sports Fashion is a specialty retailer focused on sportswear and athleisure products, operating both physical stores and digital platforms across international markets.",
+    marketCap: "Approximately GBP 3.62 billion",
+    founded: "Incorporated on February 21, 1985"
+  },
+  "KGF": {
+    summary: "Kingfisher is an international home improvement retailer operating multiple brands across Europe, serving both DIY consumers and trade professionals.",
+    marketCap: "Approximately GBP 4.63 billion",
+    founded: "Incorporated on September 16, 1982"
+  },
+  "LAND": {
+    summary: "Land Securities is a UK real estate investment trust with a portfolio focused on urban office, retail, and mixed-use developments.",
+    marketCap: "Approximately GBP 4.24 billion",
+    founded: "Incorporated on February 7, 2002"
+  },
+  "LGEN": {
+    summary: "Legal & General is a financial services group providing retirement solutions, asset management, insurance, and institutional investment services.",
+    marketCap: "Approximately GBP 13.54 billion",
+    founded: "Incorporated on February 27, 1979"
+  },
+  "LLOY": {
+    summary: "Lloyds Banking Group is a UK-focused financial services provider offering retail and commercial banking, along with insurance, pensions, and investment products.",
+    marketCap: "Approximately GBP 58.20 billion",
+    founded: "Incorporated on October 21, 1985"
+  },
+  "LMP": {
+    summary: "LondonMetric Property is a real estate investment trust focused on long-term, triple net lease assets across logistics, healthcare, convenience retail, and leisure sectors.",
+    marketCap: "Approximately GBP 4.97 billion",
+    founded: "Incorporated on January 13, 2010"
   }
 };
 
