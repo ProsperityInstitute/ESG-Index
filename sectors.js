@@ -104,6 +104,12 @@ function renderTable(sectors) {
 }
 
 function renderBarChart(sectors) {
+  const barColors = sectors.map((_, index) => {
+    const ratio = sectors.length <= 1 ? 0 : index / (sectors.length - 1);
+    const hue = 130 - (ratio * 130);
+    return `hsl(${hue}, 58%, 52%)`;
+  });
+
   Plotly.newPlot("sectorBarChart", [
     {
       type: "bar",
@@ -113,7 +119,7 @@ function renderBarChart(sectors) {
       textposition: "outside",
       cliponaxis: false,
       marker: {
-        color: "#2e8b57"
+        color: barColors
       },
       hovertemplate: "<b>%{x}</b><br>Average ESG score: %{y:.3f}<extra></extra>"
     }
