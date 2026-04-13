@@ -1036,6 +1036,89 @@ body.page-esg {
   margin: 0;
 }
 
+.page-methodology {
+  background:
+    radial-gradient(circle at top right, rgba(47, 139, 87, 0.08), transparent 32%),
+    radial-gradient(circle at 12% 24%, rgba(79, 120, 227, 0.05), transparent 24%),
+    var(--bg);
+}
+
+.methodology-page-head {
+  margin-bottom: 10px;
+}
+
+.methodology-section {
+  position: relative;
+}
+
+.methodology-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow:
+    0 14px 30px rgba(16, 25, 43, 0.045),
+    0 2px 8px rgba(16, 25, 43, 0.025),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.methodology-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.methodology-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.methodology-card-environment {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.995) 0%, rgba(248, 251, 248, 0.99) 100%);
+  border-color: rgba(47, 139, 87, 0.1);
+}
+
+.methodology-card-environment::after {
+  background:
+    radial-gradient(circle at 88% 20%, rgba(47, 139, 87, 0.07) 0%, rgba(47, 139, 87, 0) 30%),
+    radial-gradient(circle at 12% 100%, rgba(47, 139, 87, 0.045) 0%, rgba(47, 139, 87, 0) 34%);
+}
+
+.methodology-card-social {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.995) 0%, rgba(247, 249, 255, 0.99) 100%);
+  border-color: rgba(79, 120, 227, 0.11);
+}
+
+.methodology-card-social::after {
+  background:
+    radial-gradient(circle at 88% 20%, rgba(79, 120, 227, 0.075) 0%, rgba(79, 120, 227, 0) 30%),
+    radial-gradient(circle at 12% 100%, rgba(79, 120, 227, 0.04) 0%, rgba(79, 120, 227, 0) 34%);
+}
+
+.methodology-card-governance {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.995) 0%, rgba(255, 248, 248, 0.99) 100%);
+  border-color: rgba(217, 93, 93, 0.12);
+}
+
+.methodology-card-governance::after {
+  background:
+    radial-gradient(circle at 88% 20%, rgba(217, 93, 93, 0.08) 0%, rgba(217, 93, 93, 0) 32%),
+    radial-gradient(circle at 12% 100%, rgba(217, 93, 93, 0.045) 0%, rgba(217, 93, 93, 0) 36%);
+}
+
+.methodology-card-neutral {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.995) 0%, rgba(248, 251, 248, 0.99) 100%);
+  border-color: rgba(47, 139, 87, 0.08);
+}
+
+.methodology-card-neutral::after {
+  background:
+    radial-gradient(circle at 88% 20%, rgba(47, 139, 87, 0.05) 0%, rgba(47, 139, 87, 0) 28%),
+    radial-gradient(circle at 12% 100%, rgba(47, 139, 87, 0.03) 0%, rgba(47, 139, 87, 0) 32%);
+}
+
 .sector-table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);
