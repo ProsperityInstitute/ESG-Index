@@ -2475,6 +2475,88 @@ body.page-social .tier-pill {
   border: 1px solid rgba(47, 139, 87, 0.07);
 }
 
+.overview-articles-section {
+  margin-top: 28px;
+}
+
+.overview-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.page-home .article-placeholder-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.page-home .article-placeholder-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(47, 139, 87, 0.16);
+  box-shadow:
+    0 16px 28px rgba(16, 25, 43, 0.05),
+    0 2px 8px rgba(16, 25, 43, 0.025),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.article-placeholder-image {
+  position: relative;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(47, 139, 87, 0.14) 0%, rgba(16, 25, 43, 0.06) 100%),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.46) 0%, rgba(255, 255, 255, 0) 40%);
+  border-bottom: 1px solid rgba(47, 139, 87, 0.08);
+}
+
+.article-placeholder-image span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #24553a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.article-placeholder-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.article-placeholder-body h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  line-height: 1.08;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.article-placeholder-body p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.article-placeholder-body .section-link {
+  margin-top: auto;
+}
+
 .breakdown-stack {
   display: grid;
   gap: 12px;
@@ -2587,6 +2669,10 @@ body.page-social .tier-pill {
   }
 
   .overview-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-articles-grid {
     grid-template-columns: 1fr;
   }
 }
