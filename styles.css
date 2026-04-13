@@ -1910,6 +1910,68 @@ body.page-social .score-table th:nth-child(8) .header-cell {
   max-width: 100% !important;
 }
 
+.page-sectors {
+  background:
+    radial-gradient(circle at top right, rgba(47, 139, 87, 0.06), transparent 34%),
+    radial-gradient(circle at 8% 22%, rgba(47, 139, 87, 0.035), transparent 24%),
+    var(--bg);
+}
+
+.page-sectors .construction,
+.page-sectors .sector-stats-widget,
+.page-sectors .sector-panel-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.995) 0%, rgba(248, 251, 248, 0.99) 100%);
+  border-color: rgba(47, 139, 87, 0.08);
+  box-shadow:
+    0 14px 30px rgba(16, 25, 43, 0.04),
+    0 2px 8px rgba(16, 25, 43, 0.022),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.page-sectors .construction::after,
+.page-sectors .sector-stats-widget::after,
+.page-sectors .sector-panel-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(47, 139, 87, 0.05) 0%, rgba(47, 139, 87, 0) 28%),
+    radial-gradient(circle at 12% 100%, rgba(47, 139, 87, 0.028) 0%, rgba(47, 139, 87, 0) 32%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-sectors .construction > *,
+.page-sectors .sector-stats-widget > *,
+.page-sectors .sector-panel-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-sectors .sector-stats-widget .stat {
+  background: transparent;
+}
+
+.page-sectors .sector-stats-widget .stat + .stat {
+  border-left-color: rgba(47, 139, 87, 0.08);
+}
+
+.page-sectors .sector-table-wrap {
+  border-color: rgba(47, 139, 87, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(248, 251, 248, 0.97) 100%);
+}
+
+.page-sectors .sector-table thead {
+  background: rgba(47, 139, 87, 0.035);
+}
+
+.page-sectors .sector-table tbody tr:hover {
+  background: rgba(47, 139, 87, 0.04);
+}
+
 .overview-distribution-chart {
   width: 100%;
   min-height: 360px;
