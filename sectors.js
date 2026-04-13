@@ -230,7 +230,7 @@ function renderGroupedChart(sectors) {
       name: "Environment",
       x: sectors.map(s => s.sector),
       y: sectors.map(s => s.avgEnvironment),
-      marker: { color: "#2e8b57" },
+      marker: { color: "#4aa772" },
       hovertemplate: "<b>%{x}</b><br>Environment: %{y:.3f}<extra></extra>"
     },
     {
