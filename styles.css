@@ -988,6 +988,10 @@ body.page-esg {
   background: rgba(47, 139, 87, 0.12);
 }
 
+.breakdown-environment .progress.red > span {
+  background: linear-gradient(90deg, #63c38a 0%, var(--green) 100%);
+}
+
 .breakdown-social .progress {
   background: rgba(79, 120, 227, 0.12);
 }
