@@ -121,13 +121,13 @@ function renderBarChart(sectors) {
       marker: {
         color: barColors
       },
-      hovertemplate: "<b>%{x}</b><br>Average ESG score: %{y:.3f}<extra></extra>"
+      hovertemplate: "<b>%{x}</b><br>Average ESG exposure: %{y:.3f}<extra></extra>"
     }
   ], {
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
     margin: { l: 60, r: 24, t: 10, b: 20 },
-    yaxis: { title: "Average ESG Score" },
+    yaxis: { title: "Average ESG Exposure" },
     xaxis: {
       showticklabels: false,
       showgrid: false,
@@ -204,14 +204,14 @@ function renderBoxPlot(sectors) {
     name: s.sector,
     y: s.companyESGScores,
     boxpoints: "outliers",
-    hovertemplate: "<b>" + s.sector + "</b><br>ESG Score: %{y:.3f}<extra></extra>"
+    hovertemplate: "<b>" + s.sector + "</b><br>ESG Exposure: %{y:.3f}<extra></extra>"
   }));
 
   Plotly.newPlot("sectorBoxPlot", traces, {
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
     margin: { l: 60, r: 30, t: 10, b: 20 },
-    yaxis: { title: "Company ESG Score" },
+    yaxis: { title: "Company ESG Exposure" },
     xaxis: {
       showticklabels: false,
       showgrid: false,

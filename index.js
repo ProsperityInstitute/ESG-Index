@@ -165,11 +165,11 @@ function renderOverviewStats(data) {
     </div>
     <div class="stat">
       <div class="stat-value"><a href="profile.html?ticker=${encodeURIComponent(highest.Ticker)}" style="color: inherit; text-decoration: none; border-bottom: 2px solid var(--red);">${highest.Ticker}</a></div>
-      <div class="stat-label">Highest ESG Score</div>
+      <div class="stat-label">Highest ESG Exposure</div>
     </div>
     <div class="stat">
       <div class="stat-value"><a href="profile.html?ticker=${encodeURIComponent(lowest.Ticker)}" style="color: inherit; text-decoration: none; border-bottom: 2px solid var(--green);">${lowest.Ticker}</a></div>
-      <div class="stat-label">Lowest ESG score</div>
+      <div class="stat-label">Lowest ESG Exposure</div>
     </div>
     <div class="stat">
       <div class="stat-value"><a href="esg.html" style="color: inherit; text-decoration: none;">${fmtPct(avgESG)}</a></div>
