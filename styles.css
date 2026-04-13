@@ -177,8 +177,8 @@ header {
   height: 3px;
   border-radius: 999px;
   background: var(--nav-pill-accent);
-  opacity: 0.7;
-  transform: scaleX(0.72);
+  opacity: 0;
+  transform: scaleX(0.25);
   transform-origin: center;
   box-shadow: 0 0 12px color-mix(in srgb, var(--nav-pill-accent) 30%, transparent);
   transition:
