@@ -1525,6 +1525,31 @@ tbody tr:nth-child(even) td {
   font-size: 14px;
 }
 
+.rank-badge.rank-tier-best {
+  color: #1f7a46;
+  background: #e8f5ea;
+}
+
+.rank-badge.rank-tier-good {
+  color: #4f9b63;
+  background: #eef8f0;
+}
+
+.rank-badge.rank-tier-moderate {
+  color: #b7811f;
+  background: #f8edd8;
+}
+
+.rank-badge.rank-tier-poor {
+  color: #c96a2b;
+  background: #faeadf;
+}
+
+.rank-badge.rank-tier-wasteful {
+  color: #c94b4b;
+  background: #f9e3e3;
+}
+
 .rank-cell,
 .company-cell,
 .ticker-cell,

@@ -76,7 +76,7 @@ function renderTable() {
     const tier = tierKey(d.Social_Score);
 
     return `<tr class="ranking-row" onclick="window.location.href='profile.html?ticker=${encodeURIComponent(d.Ticker)}'">
-      <td><div class="rank-cell"><div class="rank-badge">${d.rank}</div></div></td>
+      <td><div class="rank-cell"><div class="rank-badge rank-tier-${tier}">${d.rank}</div></div></td>
       <td>
         <div class="company-cell">
           <div class="company-name">

@@ -155,7 +155,7 @@ function renderTable(rows) {
 
   body.innerHTML = current.map(r => `
         <tr class="ranking-row" onclick="window.location.href='profile.html?ticker=${encodeURIComponent(r.Ticker)}'">
-          <td><div class="rank-cell"><div class="rank-badge">${r.rank}</div></div></td>
+          <td><div class="rank-cell"><div class="rank-badge rank-tier-${tierKey(r.Governance_Reference_Score)}">${r.rank}</div></div></td>
           <td>
             <div class="company-cell">
               <div class="company-name">
