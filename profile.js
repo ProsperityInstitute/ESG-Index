@@ -15,6 +15,7 @@ const PROFILE_CONTACTS = {
   "AAL": { irEmail: "tyler.broda@angloamerican.com" },
   "ANTO": { irEmail: "investorrelations@antofagasta.co.uk" },
   "AHT": { irEmail: "kevin.powers@sunbeltrentals.com" },
+  "ABF": { irPhone: "+44 (0)20 7404 5959" },
   "AV": { irEmail: "IR@aviva.com" },
   "AZN": { irEmail: "ir@astrazeneca.com" },
   "AUTO": { irEmail: "ir@autotrader.co.uk" },
@@ -48,9 +49,11 @@ const PROFILE_CONTACTS = {
   "GLEN": { irEmail: "martin.fewings@glencore.com" },
   "GSK": { irEmail: "GSK.Investor-Relations@gsk.com" },
   "HLN": { irEmail: "investor-relations@haleon.com" },
+  "HL": { irPhone: "+44 (0)384 2030" },
   "HLMA": { irEmail: "investor.relations@halma.com" },
   "HSX": { irEmail: "yana.osullivan@hiscox.com" },
   "HWDN": { irEmail: "IR@howdens.com" },
+  "HIK": { irPhone: "+44 (0) 20 7399 2760" },
   "HSBC": { irEmail: "investorrelations@hsbc.com" },
   "IMI": { irEmail: "edward.hann@imiplc.com" },
   "IMB": { irEmail: "ir@impbrands.com" },
@@ -155,15 +158,22 @@ function renderProfileContacts(company) {
 
   if (!contactBlock || !irEmailLink) return;
 
-  if (!contact || !contact.irEmail) {
+  if (!contact || (!contact.irEmail && !contact.irPhone)) {
     contactBlock.hidden = true;
     irEmailLink.textContent = "";
     irEmailLink.removeAttribute("href");
     return;
   }
 
-  irEmailLink.textContent = contact.irEmail;
-  irEmailLink.href = `mailto:${contact.irEmail}`;
+  if (contact.irPhone) {
+    const telHref = `tel:${contact.irPhone.replace(/\s+/g, "")}`;
+    irEmailLink.textContent = contact.irPhone;
+    irEmailLink.href = telHref;
+  } else {
+    irEmailLink.textContent = contact.irEmail;
+    irEmailLink.href = `mailto:${contact.irEmail}`;
+  }
+
   contactBlock.hidden = false;
 }
 
