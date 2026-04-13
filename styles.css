@@ -1036,6 +1036,99 @@ body.page-esg {
   margin: 0;
 }
 
+.sector-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(47, 139, 87, 0.03) 100%);
+}
+
+.sector-table {
+  width: 100%;
+  min-width: 1080px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.sector-table thead {
+  background: rgba(47, 139, 87, 0.05);
+}
+
+.sector-table th,
+.sector-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid rgba(221, 227, 218, 0.9);
+  vertical-align: middle;
+}
+
+.sector-table th {
+  text-align: left;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sector-table td {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.sector-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.sector-table tbody tr:hover {
+  background: rgba(47, 139, 87, 0.05);
+}
+
+.sector-table .num-cell {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.sector-table .sector-name-cell {
+  font-weight: 700;
+}
+
+.sector-table th:nth-child(1),
+.sector-table td:nth-child(1) {
+  width: 72px;
+}
+
+.sector-table th:nth-child(2),
+.sector-table td:nth-child(2) {
+  width: 170px;
+}
+
+.sector-table th:nth-child(3),
+.sector-table td:nth-child(3) {
+  width: 94px;
+}
+
+.sector-table th:nth-child(4),
+.sector-table td:nth-child(4),
+.sector-table th:nth-child(5),
+.sector-table td:nth-child(5),
+.sector-table th:nth-child(6),
+.sector-table td:nth-child(6),
+.sector-table th:nth-child(7),
+.sector-table td:nth-child(7),
+.sector-table th:nth-child(10),
+.sector-table td:nth-child(10) {
+  width: 108px;
+}
+
+.sector-table th:nth-child(8),
+.sector-table td:nth-child(8),
+.sector-table th:nth-child(9),
+.sector-table td:nth-child(9) {
+  width: 180px;
+}
+
 /* =========================
    Leaderboard
 ========================= */

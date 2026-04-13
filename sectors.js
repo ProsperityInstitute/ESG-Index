@@ -89,16 +89,16 @@ function renderTable(sectors) {
 
   tbody.innerHTML = sectors.map(sector => `
     <tr>
-      <td style="padding:12px;">${sector.rank}</td>
-      <td style="padding:12px;">${sector.sector}</td>
-      <td style="padding:12px;">${sector.count}</td>
-      <td style="padding:12px;">${fmt(sector.avgESG)}</td>
-      <td style="padding:12px;">${fmt(sector.avgEnvironment)}</td>
-      <td style="padding:12px;">${fmt(sector.avgSocial)}</td>
-      <td style="padding:12px;">${fmt(sector.medianESG)}</td>
-      <td style="padding:12px;">${sector.bestCompany}</td>
-      <td style="padding:12px;">${sector.worstCompany}</td>
-      <td style="padding:12px;">${fmt(sector.range)}</td>
+      <td class="num-cell">${sector.rank}</td>
+      <td class="sector-name-cell">${sector.sector}</td>
+      <td class="num-cell">${sector.count}</td>
+      <td class="num-cell">${fmt(sector.avgESG)}</td>
+      <td class="num-cell">${fmt(sector.avgEnvironment)}</td>
+      <td class="num-cell">${fmt(sector.avgSocial)}</td>
+      <td class="num-cell">${fmt(sector.medianESG)}</td>
+      <td>${sector.bestCompany}</td>
+      <td>${sector.worstCompany}</td>
+      <td class="num-cell">${fmt(sector.range)}</td>
     </tr>
   `).join("");
 }
