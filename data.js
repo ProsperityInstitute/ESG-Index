@@ -101,6 +101,123 @@ const RAW_DATA = [
   {"Company":"WPP","Ticker":"WPP","Sector":"Advertising","Climate_Targets":0.69,"Investment_Transition":0.19,"Climate_Reporting":0.38,"Environment_Score":0.4200,"DEI_Targets_Representation":0.6250,"DEI_Programmes_Memberships":0.3333,"Social_Incentives":0.6667,"Social_Score":0.5417}
 ];
 
+const CONSOLIDATED_SECTOR_ORDER = [
+  "Financial Services",
+  "Energy",
+  "Utilities",
+  "Materials",
+  "Industrials",
+  "Consumer Staples",
+  "Consumer Discretionary",
+  "Healthcare",
+  "Technology & Data",
+  "Real Estate",
+  "Telecommunications"
+];
+
+const CONSOLIDATED_SECTOR_BY_TICKER = {
+  "III": "Financial Services",
+  "ADM": "Financial Services",
+  "AAF": "Telecommunications",
+  "ALW": "Financial Services",
+  "AAL": "Materials",
+  "ANTO": "Materials",
+  "AHT": "Industrials",
+  "ABF": "Consumer Staples",
+  "AZN": "Healthcare",
+  "AUTO": "Consumer Discretionary",
+  "AV": "Financial Services",
+  "BAB": "Industrials",
+  "BA": "Industrials",
+  "BARC": "Financial Services",
+  "BDEV": "Consumer Discretionary",
+  "BEZ": "Financial Services",
+  "BKG": "Consumer Discretionary",
+  "BP": "Energy",
+  "BATS": "Consumer Staples",
+  "BLND": "Real Estate",
+  "BT.A": "Telecommunications",
+  "BNZL": "Industrials",
+  "BRBY": "Consumer Discretionary",
+  "CNA": "Energy",
+  "CCH": "Consumer Staples",
+  "CPG": "Consumer Discretionary",
+  "CTEC": "Healthcare",
+  "CRDA": "Materials",
+  "DCC": "Energy",
+  "DGE": "Consumer Staples",
+  "DPLM": "Industrials",
+  "EDV": "Materials",
+  "ENT": "Consumer Discretionary",
+  "EZJ": "Consumer Discretionary",
+  "EXPN": "Technology & Data",
+  "FCIT": "Financial Services",
+  "FRES": "Materials",
+  "GAW": "Consumer Discretionary",
+  "GLEN": "Materials",
+  "GSK": "Healthcare",
+  "HLN": "Healthcare",
+  "HL": "Financial Services",
+  "HIK": "Healthcare",
+  "HLMA": "Industrials",
+  "HSX": "Financial Services",
+  "HWDN": "Consumer Discretionary",
+  "HSBC": "Financial Services",
+  "IMI": "Industrials",
+  "IMB": "Consumer Staples",
+  "INF": "Technology & Data",
+  "IHG": "Consumer Discretionary",
+  "ICG": "Financial Services",
+  "ITRK": "Industrials",
+  "IAG": "Consumer Discretionary",
+  "JD": "Consumer Discretionary",
+  "KGF": "Consumer Discretionary",
+  "LAND": "Real Estate",
+  "LGEN": "Financial Services",
+  "LLOY": "Financial Services",
+  "LMP": "Real Estate",
+  "LSEG": "Financial Services",
+  "MNG": "Financial Services",
+  "MKS": "Consumer Discretionary",
+  "MRO": "Industrials",
+  "MNDI": "Materials",
+  "NG": "Utilities",
+  "NWG": "Financial Services",
+  "NXT": "Consumer Discretionary",
+  "PSON": "Technology & Data",
+  "PSN": "Consumer Discretionary",
+  "PHNX": "Financial Services",
+  "PRU": "Financial Services",
+  "RKT": "Consumer Staples",
+  "REL": "Technology & Data",
+  "RTO": "Industrials",
+  "RMV": "Real Estate",
+  "RIO": "Materials",
+  "RR": "Industrials",
+  "SGE": "Technology & Data",
+  "SBRY": "Consumer Discretionary",
+  "SDR": "Financial Services",
+  "SMT": "Financial Services",
+  "SGRO": "Real Estate",
+  "SVT": "Utilities",
+  "SHEL": "Energy",
+  "SN": "Healthcare",
+  "SMIN": "Industrials",
+  "SPX": "Industrials",
+  "SSE": "Utilities",
+  "STJ": "Financial Services",
+  "STAN": "Financial Services",
+  "TW": "Consumer Discretionary",
+  "TSCO": "Consumer Staples",
+  "ULVR": "Consumer Staples",
+  "UTG": "Real Estate",
+  "UU": "Utilities",
+  "VOD": "Telecommunications",
+  "WEIR": "Industrials",
+  "WTB": "Consumer Discretionary",
+  "WPP": "Consumer Discretionary"
+};
+
 const cappedData = RAW_DATA.map(d => {
   const clamp = v => Math.max(0, Math.min(1, Number(v) || 0));
 
@@ -113,9 +230,11 @@ const cappedData = RAW_DATA.map(d => {
   const governanceReferenceScore = clamp(
     (governanceReportingAssurance + governanceOversightIncentives) / 2
   );
+  const consolidatedSector = CONSOLIDATED_SECTOR_BY_TICKER[d.Ticker] || d.Sector;
 
   return {
     ...d,
+    Sector: consolidatedSector,
 
     Climate_Targets: clamp(d.Climate_Targets),
     Investment_Transition: clamp(d.Investment_Transition),
@@ -179,7 +298,13 @@ function avg(key) {
 }
 
 function uniqueSectors() {
-  return [...new Set(cappedData.map(d => d.Sector))].sort();
+  const seen = new Set(cappedData.map(d => d.Sector));
+  const ordered = CONSOLIDATED_SECTOR_ORDER.filter(sector => seen.has(sector));
+  const extras = [...seen]
+    .filter(sector => !CONSOLIDATED_SECTOR_ORDER.includes(sector))
+    .sort();
+
+  return [...ordered, ...extras];
 }
 
 function topNBy(scoreKey, n = 10, asc = true) {

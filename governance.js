@@ -80,14 +80,12 @@ function populateFilters(rows) {
   const sectorFilter = document.getElementById("sectorFilter");
   if (!sectorFilter) return;
 
-  [...new Set(rows.map(r => r.Sector))]
-    .sort()
-    .forEach(sector => {
-      const opt = document.createElement("option");
-      opt.value = sector;
-      opt.textContent = sector;
-      sectorFilter.appendChild(opt);
-    });
+  uniqueSectors().forEach(sector => {
+    const opt = document.createElement("option");
+    opt.value = sector;
+    opt.textContent = sector;
+    sectorFilter.appendChild(opt);
+  });
 }
 
 function sortRows(rows) {
