@@ -1436,47 +1436,47 @@ tbody td {
 }
 
 /* Companies page table column widths */
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) table {
+body.page-companies table {
   width: 100%;
   table-layout: auto;
 }
 
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) .toolbar {
+body.page-companies .toolbar {
   grid-template-columns: minmax(0, 1fr) 220px;
 }
 
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) thead th {
+body.page-companies thead th {
   text-align: left;
   padding-left: 16px;
 }
 
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) th:nth-child(1),
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) td:nth-child(1) {
+body.page-companies th:nth-child(1),
+body.page-companies td:nth-child(1) {
   min-width: 220px;
 }
 
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) th:nth-child(2),
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) td:nth-child(2) {
+body.page-companies th:nth-child(2),
+body.page-companies td:nth-child(2) {
   min-width: 90px;
 }
 
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) th:nth-child(3),
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) td:nth-child(3) {
+body.page-companies th:nth-child(3),
+body.page-companies td:nth-child(3) {
   min-width: 140px;
 }
 
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) th:nth-child(4),
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) td:nth-child(4) {
+body.page-companies th:nth-child(4),
+body.page-companies td:nth-child(4) {
   min-width: 110px;
 }
 
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) th:nth-child(5),
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) td:nth-child(5) {
+body.page-companies th:nth-child(5),
+body.page-companies td:nth-child(5) {
   min-width: 240px;
 }
 
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) th:nth-child(6),
-body:not(.page-rankings):not(.page-esg):not(.page-social):not(.page-governance) td:nth-child(6) {
+body.page-companies th:nth-child(6),
+body.page-companies td:nth-child(6) {
   min-width: 200px;
 }
 
