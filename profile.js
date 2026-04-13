@@ -297,7 +297,7 @@ const PROFILE_CONTENT = {
     founded: "Incorporated on August 15, 2007"
   },
   "GAW": {
-    summary: "Games Workshop is a designer and manufacturer of miniature wargaming products, supported by a strong intellectual property portfolio and licensing activities.",
+    summary: "Games Workshop is a designer and manufacturer of miniature wargaming products, supported by a strong intellectual property portfolio and licensing activities Games Workshop is our bet performing company reaching an Exposure Score of only 15.1%.",
     marketCap: "Approximately GBP 6.29 billion",
     founded: "Incorporated on December 9, 1991"
   },
@@ -402,7 +402,7 @@ const PROFILE_CONTENT = {
     founded: "Incorporated on February 27, 1979"
   },
   "LLOY": {
-    summary: "Lloyds Banking Group is a UK-focused financial services provider offering retail and commercial banking, along with insurance, pensions, and investment products.",
+    summary: "Lloyds Banking Group is a UK-focused financial services provider offering retail and commercial banking, along with insurance, pensions, and investment products. Lloyds is our worst performing company reaching an Exposure Score of 80.2%.",
     marketCap: "Approximately GBP 58.20 billion",
     founded: "Incorporated on October 21, 1985"
   },
@@ -565,6 +565,51 @@ const PROFILE_CONTENT = {
     summary: "Standard Chartered is an international banking group with a strong footprint across Asia, Africa, and the Middle East, providing corporate, institutional, and retail banking services.",
     marketCap: "Approximately GBP 61.35 billion",
     founded: "Incorporated on March 10, 1969"
+  },
+  "TW": {
+    summary: "Taylor Wimpey is a British housebuilder focused on residential construction, delivering large-scale housing developments across the UK.",
+    marketCap: "Approximately GBP 5.04 billion",
+    founded: "Incorporated on October 12, 2007"
+  },
+  "TSCO": {
+    summary: "Tesco is a leading UK retailer offering groceries, general merchandise, and online services, supported by a nationwide store network and digital platforms.",
+    marketCap: "Approximately GBP 22.15 billion",
+    founded: "Incorporated on September 3, 1919"
+  },
+  "ULVR": {
+    summary: "Unilever is a multinational consumer goods company producing a broad range of food, home, and personal care products sold across global markets.",
+    marketCap: "Approximately GBP 94.27 billion",
+    founded: "Incorporated on June 7, 1929"
+  },
+  "UTG": {
+    summary: "Unite Group is a UK-based real estate investment trust specializing in purpose-built student accommodation, serving university markets across the country.",
+    marketCap: "Approximately GBP 4.39 billion",
+    founded: "Incorporated on August 7, 1991"
+  },
+  "UU": {
+    summary: "United Utilities is a UK water and wastewater services provider responsible for critical infrastructure supporting residential and commercial customers.",
+    marketCap: "Approximately GBP 8.11 billion",
+    founded: "Incorporated on June 6, 1989"
+  },
+  "VOD": {
+    summary: "Vodafone Group is a global telecommunications operator providing mobile, broadband, and digital services across multiple international markets.",
+    marketCap: "Approximately GBP 29.50 billion",
+    founded: "Incorporated on February 19, 1991"
+  },
+  "WEIR": {
+    summary: "Weir Group is an engineering company supplying equipment and services to mining, oil, and gas industries, with a focus on critical infrastructure and process technologies.",
+    marketCap: "Approximately GBP 3.23 billion",
+    founded: "Incorporated on January 12, 1871"
+  },
+  "WTB": {
+    summary: "Whitbread is a hospitality company operating hotels, restaurants, and related services, with a strong presence in the UK lodging market.",
+    marketCap: "Approximately GBP 7.05 billion",
+    founded: "Incorporated on October 6, 1742"
+  },
+  "WPP": {
+    summary: "WPP is a global marketing and communications company providing advertising, media investment, public relations, and data-driven marketing services to clients worldwide.",
+    marketCap: "Approximately GBP 14.32 billion",
+    founded: "Incorporated on July 29, 1971"
   }
 };
 
