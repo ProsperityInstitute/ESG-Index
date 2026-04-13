@@ -1047,7 +1047,7 @@ body.page-esg {
   width: 100%;
   min-width: 1080px;
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .sector-table thead {
@@ -1056,7 +1056,7 @@ body.page-esg {
 
 .sector-table th,
 .sector-table td {
-  padding: 13px 14px;
+  padding: 12px 12px;
   border-bottom: 1px solid rgba(221, 227, 218, 0.9);
   vertical-align: middle;
 }
@@ -1074,6 +1074,7 @@ body.page-esg {
 .sector-table td {
   font-size: 14px;
   color: var(--ink);
+  line-height: 1.3;
 }
 
 .sector-table tbody tr:last-child td {
@@ -1096,17 +1097,17 @@ body.page-esg {
 
 .sector-table th:nth-child(1),
 .sector-table td:nth-child(1) {
-  width: 72px;
+  width: 56px;
 }
 
 .sector-table th:nth-child(2),
 .sector-table td:nth-child(2) {
-  width: 170px;
+  width: 150px;
 }
 
 .sector-table th:nth-child(3),
 .sector-table td:nth-child(3) {
-  width: 94px;
+  width: 76px;
 }
 
 .sector-table th:nth-child(4),
@@ -1119,14 +1120,14 @@ body.page-esg {
 .sector-table td:nth-child(7),
 .sector-table th:nth-child(10),
 .sector-table td:nth-child(10) {
-  width: 108px;
+  width: 88px;
 }
 
 .sector-table th:nth-child(8),
 .sector-table td:nth-child(8),
 .sector-table th:nth-child(9),
 .sector-table td:nth-child(9) {
-  width: 180px;
+  width: 148px;
 }
 
 /* =========================
@@ -2440,6 +2441,22 @@ body.page-social .tier-pill {
   padding: 24px 16px 20px;
   text-align: center;
   background: var(--surface);
+}
+
+.sector-stats-widget .stat-best .stat-value,
+.sector-stats-widget .stat-worst .stat-value {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  text-decoration-skip-ink: none;
+}
+
+.sector-stats-widget .stat-best .stat-value {
+  text-decoration-color: var(--green);
+}
+
+.sector-stats-widget .stat-worst .stat-value {
+  text-decoration-color: var(--red);
 }
 
 .sector-stats-widget .stat + .stat {

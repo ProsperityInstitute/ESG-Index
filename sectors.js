@@ -64,11 +64,11 @@ function renderStats(sectors) {
   const tightest = [...sectors].sort((a, b) => a.range - b.range)[0];
 
   grid.innerHTML = `
-    <div class="stat">
+    <div class="stat stat-best">
       <div class="stat-value">${best.sector}</div>
       <div class="stat-label">Best sector</div>
     </div>
-    <div class="stat">
+    <div class="stat stat-worst">
       <div class="stat-value">${worst.sector}</div>
       <div class="stat-label">Worst sector</div>
     </div>
