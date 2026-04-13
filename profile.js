@@ -110,6 +110,109 @@ const PROFILE_CONTACTS = {
   "WPP": { irEmail: "irteam@wpp.com" }
 };
 
+const PROFILE_DIRECTORY_DETAILS = {
+  "III": { website: "https://www.3i.com/", hq: "1 Knightsbridge, London, SW1X 7LX, United Kingdom" },
+  "ADM": { website: "https://www.admiralgroup.co.uk/", hq: "Capital Tower, Greyfriars Road, Cardiff, CF10 3AZ, Wales, United Kingdom" },
+  "AAF": { website: "https://airtel.africa/", hq: "53-54 Grosvenor Street, London, W1K 3HU, United Kingdom" },
+  "ALW": { website: "https://www.alliancewitan.com/", hq: "River Court, 5 West Victoria Dock Road, Dundee, DD1 3JT, United Kingdom" },
+  "AAL": { website: "https://www.angloamerican.com/", hq: "17 Charterhouse Street, London, EC1N 6RA, United Kingdom" },
+  "ANTO": { website: "https://www.antofagasta.co.uk/", hq: "103 Mount Street, London, W1K 2TJ, United Kingdom" },
+  "AHT": { website: "https://www.ashtead-group.com/", hq: "100 Cheapside, London, United Kingdom" },
+  "ABF": { website: "https://www.abf.co.uk/", hq: "Weston Centre, 10 Grosvenor Street, London, W1K 4QY, United Kingdom" },
+  "AZN": { website: "https://www.astrazeneca.com/", hq: "1 Francis Crick Avenue, Cambridge Biomedical Campus, Cambridge, CB2 0AA, United Kingdom" },
+  "AUTO": { website: "https://plc.autotrader.co.uk/", hq: "No.3 Circle Square, Manchester, United Kingdom" },
+  "AV": { website: "https://www.aviva.com/", hq: "80 Fenchurch Street, London, EC3M 4AE, United Kingdom" },
+  "BAB": { website: "https://www.babcockinternational.com/", hq: "33 Wigmore Street, London, W1U 1QX, United Kingdom" },
+  "BA": { website: "https://www.baesystems.com/", hq: "6 Carlton Gardens, London, SW1Y 5AD, United Kingdom" },
+  "BARC": { website: "https://home.barclays/", hq: "1 Churchill Place, London, E14 5HP, United Kingdom" },
+  "BDEV": { website: "https://www.barrattdevelopments.co.uk/", hq: "Barratt House, Cartwright Way, Forest Business Park, Bardon Hill, Coalville, Leicestershire, LE67 1UF, United Kingdom" },
+  "BEZ": { website: "https://www.beazley.com/", hq: "22 Bishopsgate, London, EC2N 4BQ, United Kingdom" },
+  "BKG": { website: "https://www.berkeleygroup.co.uk/", hq: "Berkeley House, 19 Portsmouth Road, Cobham, Surrey, KT11 1JG, United Kingdom" },
+  "BP": { website: "https://www.bp.com/", hq: "1 St James's Square, London, SW1Y 4PD, United Kingdom" },
+  "BATS": { website: "https://www.bat.com/", hq: "Globe House, 4 Temple Place, London, WC2R 2PG, United Kingdom" },
+  "BLND": { website: "https://www.britishland.com/", hq: "York House, 45 Seymour Street, London, W1H 7LX, United Kingdom" },
+  "BT.A": { website: "https://www.bt.com/", hq: "1 Braham Street, London, E1 8EE, United Kingdom" },
+  "BNZL": { website: "https://www.bunzl.com/", hq: "York House, 45 Seymour Street, London, W1H 7JT, United Kingdom" },
+  "BRBY": { website: "https://www.burberryplc.com/", hq: "Horseferry House, Horseferry Road, London, SW1P 2AW, United Kingdom" },
+  "CNA": { website: "https://www.centrica.com/", hq: "Millstream, Maidenhead Road, Windsor, Berkshire, SL4 5GD, United Kingdom" },
+  "CCH": { website: "https://www.coca-colahellenic.com/", hq: "Turmstrasse 26, Zug, 6300, Switzerland" },
+  "CPG": { website: "https://www.compass-group.com/", hq: "Compass House, Guildford Street, Chertsey, Surrey, KT16 9BQ, United Kingdom" },
+  "CTEC": { website: "https://www.convatecgroup.com/", hq: "7th Floor, 20 Eastbourne Terrace, London, W2 6LG, United Kingdom" },
+  "CRDA": { website: "https://www.croda.com/", hq: "Cowick Hall, Snaith, Goole, East Yorkshire, DN14 9AA, United Kingdom" },
+  "DCC": { website: "https://www.dcc.ie/", hq: "DCC House, Leopardstown Road, Foxrock, Dublin 18, D18 PK00, Ireland" },
+  "DGE": { website: "https://www.diageo.com/", hq: "Lakeside Drive, Park Royal, London, NW10 7HQ, United Kingdom" },
+  "DPLM": { website: "https://www.diplomaplc.com/", hq: "10-11 Charterhouse Square, London, EC1M 6EE, United Kingdom" },
+  "EDV": { website: "https://www.endeavourmining.com/", hq: "5 Young Street, London, W8 5EH, United Kingdom" },
+  "ENT": { website: "https://entaingroup.com/", hq: "Alexandra House, 1 St Katherine's Way, London, E1W 1UY, United Kingdom" },
+  "EZJ": { website: "https://www.easyjet.com/en/", hq: "Hangar 89, London Luton Airport, Luton, Bedfordshire, LU2 9PF, United Kingdom" },
+  "EXPN": { website: "https://www.experianplc.com/", hq: "Newenham House, Northern Cross, Malahide Road, Dublin 17, D17 AY61, Ireland" },
+  "FCIT": { website: "https://www.fandc.com/", hq: "80 George Street, Edinburgh, EH2 3BU, United Kingdom" },
+  "FRES": { website: "https://www.fresnilloplc.com/", hq: "21 Upper Brook Street, London, W1K 7PY, United Kingdom" },
+  "GAW": { website: "https://investor.games-workshop.com/", hq: "Willow Road, Lenton, Nottingham, NG7 2WS, United Kingdom" },
+  "GLEN": { website: "https://www.glencore.com/", hq: "Baarermattstrasse 3, CH-6340 Baar, Switzerland" },
+  "GSK": { website: "https://www.gsk.com/", hq: "79 New Oxford Street, London, WC1A 1DG, United Kingdom" },
+  "HLN": { website: "https://www.haleon.com/", hq: "Building 5, First Floor The Heights, Weybridge, Surrey, KT13 0NY, United Kingdom" },
+  "HLMA": { website: "https://www.halma.com/", hq: "Misbourne Court, Rectory Way, Amersham, Buckinghamshire, HP7 0DE, United Kingdom" },
+  "HL": { website: "https://www.hl.co.uk/", hq: "One College Square South, Anchor Road, Bristol, BS1 5HL, United Kingdom" },
+  "HIK": { website: "https://www.hikma.com/", hq: "13 Hanover Square, London, W1S 1HW, United Kingdom" },
+  "HSX": { website: "https://www.hiscoxgroup.com/", hq: "1 Great St Helen's, London, EC3A 6HX, United Kingdom" },
+  "HWDN": { website: "https://www.howdenjoinerygroup.com/", hq: "105 Wigmore Street, London, W1U 1QY, United Kingdom" },
+  "HSBC": { website: "https://www.hsbc.com/", hq: "8 Canada Square, London, E14 5HQ, United Kingdom" },
+  "IMI": { website: "https://www.imiplc.com/", hq: "Lakeside, Solihull Parkway, Birmingham Business Park, Birmingham, B37 7XZ, United Kingdom" },
+  "IMB": { website: "https://www.imperialbrandsplc.com/", hq: "121 Winterstoke Road, Bristol, BS3 2LL, United Kingdom" },
+  "INF": { website: "https://www.informa.com/", hq: "5 Howick Place, London, SW1P 1WG, United Kingdom" },
+  "IHG": { website: "https://www.ihgplc.com/", hq: "1 Windsor Dials, Arthur Road, Windsor, Berkshire, SL4 1RS, United Kingdom" },
+  "ICG": { website: "https://www.icgam.com/", hq: "Procession House, 55 Ludgate Hill, London, EC4M 7JW, United Kingdom" },
+  "ITRK": { website: "https://www.intertek.com/", hq: "33 Cavendish Square, London, W1G 0PS, United Kingdom" },
+  "IAG": { website: "https://www.iairgroup.com/", hq: "Harmsworth House, 13-15 Bouverie Street, London, EC4Y 8DP, United Kingdom" },
+  "JD": { website: "https://www.jdplc.com/", hq: "JD Sports House, Hollinsbrook Way, Pilsworth, Bury, Lancashire, BL9 8RR, United Kingdom" },
+  "KGF": { website: "https://www.kingfisher.com/", hq: "3 Sheldon Square, London, W2 6PX, United Kingdom" },
+  "LAND": { website: "https://landsec.com/", hq: "100 Victoria Street, London, SW1E 5JL, United Kingdom" },
+  "LGEN": { website: "https://group.legalandgeneral.com/", hq: "One Coleman Street, London, EC2R 5AA, United Kingdom" },
+  "LLOY": { website: "https://www.lloydsbankinggroup.com/", hq: "25 Gresham Street, London, EC2V 7HN, United Kingdom" },
+  "LMP": { website: "https://www.londonmetric.com/", hq: "22 Manchester Square, London, W1U 3PY, United Kingdom" },
+  "LSEG": { website: "https://www.lseg.com/", hq: "10 Paternoster Square, London, EC4M 7LS, United Kingdom" },
+  "MNG": { website: "https://www.mandg.com/", hq: "10 Fenchurch Avenue, London, EC3M 5AG, United Kingdom" },
+  "MKS": { website: "https://corporate.marksandspencer.com/", hq: "Waterside House, 35 North Wharf Road, London, W2 1NW, United Kingdom" },
+  "MRO": { website: "https://www.melroseplc.net/", hq: "11th Floor, The Colmore Building, 20 Colmore Circus Queensway, Birmingham, B4 6AT, United Kingdom" },
+  "MNDI": { website: "https://www.mondigroup.com/", hq: "Building 1, 1st Floor, Aviator Park, Station Road, Addlestone, Surrey, KT15 2PG, United Kingdom" },
+  "NG": { website: "https://www.nationalgrid.com/", hq: "1-3 Strand, London, WC2N 5EH, United Kingdom" },
+  "NWG": { website: "https://investors.natwestgroup.com/", hq: "250 Bishopsgate, London, EC2M 4AA, United Kingdom" },
+  "NXT": { website: "https://www.nextplc.co.uk/", hq: "Desford Road, Enderby, Leicester, LE19 4AT, United Kingdom" },
+  "PSON": { website: "https://plc.pearson.com/", hq: "80 Strand, London, WC2R 0RL, United Kingdom" },
+  "PSN": { website: "https://www.persimmonhomes.com/", hq: "Persimmon House, Fulford, York, YO19 4FE, United Kingdom" },
+  "PHNX": { website: "https://www.thephoenixgroup.com/", hq: "1 Wythall Green Way, Wythall, Birmingham, B47 6WG, United Kingdom" },
+  "PRU": { website: "https://www.prudentialplc.com/", hq: "1 Angel Court, London, EC2R 7AG, United Kingdom" },
+  "RKT": { website: "https://www.reckitt.com/", hq: "103-105 Bath Road, Slough, Berkshire, SL1 3UH, United Kingdom" },
+  "REL": { website: "https://www.relx.com/", hq: "1-3 Strand, London, WC2N 5JR, United Kingdom" },
+  "RTO": { website: "https://www.rentokil-initial.com/", hq: "Riverbank, Meadows Business Park, Blackwater, Camberley, Surrey, GU17 9AB, United Kingdom" },
+  "RMV": { website: "https://plc.rightmove.co.uk/", hq: "Wheat Wharf, 27a Shad Thames, London, SE1 2XY, United Kingdom" },
+  "RIO": { website: "https://www.riotinto.com/", hq: "6 St James's Square, London, SW1Y 4AD, United Kingdom" },
+  "RR": { website: "https://www.rolls-royce.com/", hq: "62 Buckingham Gate, London, SW1E 6AT, United Kingdom" },
+  "SGE": { website: "https://www.sage.com/", hq: "North Park, Newcastle upon Tyne, NE13 9AA, United Kingdom" },
+  "SBRY": { website: "https://www.about.sainsburys.co.uk/", hq: "33 Holborn, London, EC1N 2HT, United Kingdom" },
+  "SDR": { website: "https://www.schroders.com/", hq: "1 London Wall Place, London, EC2Y 5AU, United Kingdom" },
+  "SMT": { website: "https://www.scottishmortgageinvestmenttrust.com/", hq: "Atria One, 144 Morrison Street, Edinburgh, EH3 8EX, United Kingdom" },
+  "SGRO": { website: "https://www.segro.com/", hq: "234 Bath Road, Slough, Berkshire, SL1 4EE, United Kingdom" },
+  "SVT": { website: "https://www.severntrent.com/", hq: "Severn Trent Centre, 2 St John's Street, Coventry, CV1 2LZ, United Kingdom" },
+  "SHEL": { website: "https://www.shell.com/", hq: "Shell Centre, London, SE1 7NA, United Kingdom" },
+  "SN": { website: "https://www.smith-nephew.com/", hq: "15 Adam Street, London, WC2N 6LA, United Kingdom" },
+  "SMIN": { website: "https://www.smiths.com/", hq: "4th Floor, 11-12 St James's Square, London, SW1Y 4LB, United Kingdom" },
+  "SPX": { website: "https://www.spiraxsarcoengineering.com/", hq: "Charlton House, Cirencester Road, Cheltenham, Gloucestershire, GL53 8ER, United Kingdom" },
+  "SSE": { website: "https://www.sse.com/", hq: "Inveralmond House, 200 Dunkeld Road, Perth, PH1 3AQ, United Kingdom" },
+  "STJ": { website: "https://www.sjp.co.uk/", hq: "St. James's Place House, 1 Tetbury Road, Cirencester, Gloucestershire, GL7 1FP, United Kingdom" },
+  "STAN": { website: "https://www.sc.com/", hq: "1 Basinghall Avenue, London, EC2V 5DD, United Kingdom" },
+  "TW": { website: "https://www.taylorwimpey.co.uk/", hq: "Gate House, Turnpike Road, High Wycombe, Buckinghamshire, HP12 3NR, United Kingdom" },
+  "TSCO": { website: "https://www.tescoplc.com/", hq: "Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, Hertfordshire, AL7 1GA, United Kingdom" },
+  "ULVR": { website: "https://www.unilever.com/", hq: "100 Victoria Embankment, London, EC4Y 0DY, United Kingdom" },
+  "UTG": { website: "https://www.unite-group.co.uk/", hq: "1 St Ann's Place, Canons House, Bristol, BS2 9BA, United Kingdom" },
+  "UU": { website: "https://www.unitedutilities.com/", hq: "Haweswater House, Lingley Mere Business Park, Lingley Green Avenue, Great Sankey, Warrington, WA5 3LP, United Kingdom" },
+  "VOD": { website: "https://www.vodafone.com/", hq: "Vodafone House, The Connection, Newbury, Berkshire, RG14 2FN, United Kingdom" },
+  "WEIR": { website: "https://www.global.weir/", hq: "16 West Nile Street, Glasgow, G1 2RQ, United Kingdom" },
+  "WTB": { website: "https://www.whitbread.co.uk/", hq: "Whitbread Court, Houghton Hall Business Park, Porz Avenue, Dunstable, Bedfordshire, LU5 5XE, United Kingdom" },
+  "WPP": { website: "https://www.wpp.com/", hq: "9-12 Waterloo Place, London, SW1Y 4BE, United Kingdom" }
+};
+
 const PROFILE_CONTENT = {
   "III": {
     summary: "3i Group is a listed investment company specializing in private equity and infrastructure, with a primary focus on investments across Europe and North America. Structured as a closed-ended investment company, it operates through a long-term capital deployment model.",
@@ -658,6 +761,10 @@ function getProfileContent(ticker) {
   return PROFILE_CONTENT[String(ticker).toUpperCase()] || null;
 }
 
+function getProfileDirectoryDetails(ticker) {
+  return PROFILE_DIRECTORY_DETAILS[String(ticker).toUpperCase()] || null;
+}
+
 function renderProfileContacts(company) {
   const contactBlock = document.getElementById("profileContactBlock");
   const irEmailLink = document.getElementById("profileIrEmail");
@@ -682,6 +789,24 @@ function renderProfileContacts(company) {
   }
 
   contactBlock.hidden = false;
+}
+
+function renderProfileDirectoryDetails(company) {
+  const websiteEl = document.getElementById("profileWebsite");
+  const hqEl = document.getElementById("profileHq");
+  const details = getProfileDirectoryDetails(company.Ticker);
+
+  if (websiteEl) {
+    if (details?.website) {
+      websiteEl.innerHTML = `<a href="${details.website}" target="_blank" rel="noopener noreferrer" class="section-link">Visit website</a>`;
+    } else {
+      websiteEl.textContent = "Not yet added";
+    }
+  }
+
+  if (hqEl) {
+    hqEl.textContent = details?.hq || "Not yet added";
+  }
 }
 
 function renderProfileHeader(company) {
@@ -894,6 +1019,7 @@ function initProfilePage() {
   }
 
   renderProfileHeader(company);
+  renderProfileDirectoryDetails(company);
   renderStats(company);
   renderBars(company);
   renderComparisonChart(company);
