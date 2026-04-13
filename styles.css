@@ -954,6 +954,48 @@ body.page-esg {
   font-size: 14px;
 }
 
+.overview-breakdown-card.breakdown-environment {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(47, 139, 87, 0.06) 100%);
+  border-color: rgba(47, 139, 87, 0.16);
+}
+
+.overview-breakdown-card.breakdown-social {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(79, 120, 227, 0.06) 100%);
+  border-color: rgba(79, 120, 227, 0.16);
+}
+
+.breakdown-environment .pillar-card {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(47, 139, 87, 0.045) 100%);
+  border-color: rgba(47, 139, 87, 0.14);
+}
+
+.breakdown-social .pillar-card {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(79, 120, 227, 0.045) 100%);
+  border-color: rgba(79, 120, 227, 0.14);
+}
+
+.breakdown-environment .pill {
+  background: rgba(47, 139, 87, 0.1);
+  color: #24553a;
+}
+
+.breakdown-social .pill {
+  background: rgba(79, 120, 227, 0.1);
+  color: #35519f;
+}
+
+.breakdown-environment .progress {
+  background: rgba(47, 139, 87, 0.12);
+}
+
+.breakdown-social .progress {
+  background: rgba(79, 120, 227, 0.12);
+}
+
+.breakdown-social .progress.red > span {
+  background: linear-gradient(90deg, #7f9df0 0%, var(--social) 100%);
+}
+
 .method-grid,
 .simple-grid {
   display: grid;
