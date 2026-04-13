@@ -156,10 +156,10 @@ function renderPieChart(sectors) {
       values: sectors.map((s) => s.count),
       sort: false,
       direction: "clockwise",
-      hole: 0.24,
-      textinfo: "label+percent",
-      textposition: "outside",
-      automargin: true,
+      hole: 0.14,
+      textinfo: "none",
+      textposition: "none",
+      automargin: false,
       marker: {
         colors: sectors.map((_, index) => palette[index % palette.length]),
         line: {
@@ -173,7 +173,7 @@ function renderPieChart(sectors) {
   ], {
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
-    margin: { l: 20, r: 20, t: 10, b: 10 },
+    margin: { l: 8, r: 8, t: 8, b: 8 },
     showlegend: true,
     legend: {
       orientation: "h",
