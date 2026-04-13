@@ -410,6 +410,161 @@ const PROFILE_CONTENT = {
     summary: "LondonMetric Property is a real estate investment trust focused on long-term, triple net lease assets across logistics, healthcare, convenience retail, and leisure sectors.",
     marketCap: "Approximately GBP 4.97 billion",
     founded: "Incorporated on January 13, 2010"
+  },
+  "MNG": {
+    summary: "M&G is a UK-based asset management and insurance group offering investment, savings, and retirement solutions across retail and institutional markets.",
+    marketCap: "Approximately GBP 7.42 billion",
+    founded: "Incorporated on January 3, 2017"
+  },
+  "MKS": {
+    summary: "Marks & Spencer is a leading UK retailer focused on clothing, food, and home products, with a strong domestic presence and a well-established consumer brand.",
+    marketCap: "Approximately GBP 5.12 billion",
+    founded: "Incorporated on December 12, 1932"
+  },
+  "MRO": {
+    summary: "Melrose Industries is an engineering group specializing in aerospace and automotive components, with a business model centered on owning and improving industrial assets.",
+    marketCap: "Approximately GBP 3.21 billion",
+    founded: "Incorporated on March 28, 2003"
+  },
+  "MNDI": {
+    summary: "Mondi is an international packaging and paper group serving both consumer and industrial markets through a broad portfolio of packaging solutions and paper products.",
+    marketCap: "Approximately GBP 12.45 billion",
+    founded: "Incorporated on November 10, 2007"
+  },
+  "NG": {
+    summary: "National Grid is a utilities company focused on electricity and gas transmission infrastructure, with major operations in both the UK and the United States.",
+    marketCap: "Approximately GBP 53.82 billion",
+    founded: "Incorporated on May 2, 1995"
+  },
+  "NWG": {
+    summary: "NatWest Group is a UK banking group providing retail and commercial banking services, with a business centered on domestic personal and business customers.",
+    marketCap: "Approximately GBP 45.67 billion",
+    founded: "Incorporated on December 19, 1999"
+  },
+  "NXT": {
+    summary: "Next is a British retailer of clothing, footwear, and home products, with a significant online presence alongside its store network.",
+    marketCap: "Approximately GBP 15.33 billion",
+    founded: "Incorporated on February 5, 1986"
+  },
+  "PSON": {
+    summary: "Pearson is an education company providing learning content, assessment tools, and educational services across academic and professional markets.",
+    marketCap: "Approximately GBP 4.12 billion",
+    founded: "Incorporated on October 5, 1948"
+  },
+  "PSH": {
+    summary: "Pershing Square Holdings is an investment holding company that serves as the listed hedge fund vehicle for Pershing Square's concentrated investment strategy.",
+    marketCap: "Approximately GBP 1.80 billion",
+    founded: "Incorporated in Jersey on May 25, 2012"
+  },
+  "PSN": {
+    summary: "Persimmon is a UK housebuilder focused on residential construction and large-scale home development across the domestic housing market.",
+    marketCap: "Approximately GBP 8.90 billion",
+    founded: "Incorporated on June 30, 1972"
+  },
+  "PHNX": {
+    summary: "Phoenix Group is an insurance holding company specializing in life insurance and long-term pensions and retirement products.",
+    marketCap: "Approximately GBP 8.25 billion",
+    founded: "Incorporated on January 28, 2000"
+  },
+  "PRU": {
+    summary: "Prudential is an international insurance group with a strong presence across Asia and Africa, offering life insurance, health insurance, and long-term savings products.",
+    marketCap: "Approximately GBP 29.12 billion",
+    founded: "Incorporated on October 5, 1914"
+  },
+  "RKT": {
+    summary: "Reckitt Benckiser is a global consumer goods company focused on health, hygiene, and home products through a portfolio of widely recognized household brands.",
+    marketCap: "Approximately GBP 35.47 billion",
+    founded: "Incorporated on January 18, 1999"
+  },
+  "REL": {
+    summary: "RELX is an information and analytics company providing data-driven tools and decision-support services across scientific, legal, risk, and business markets.",
+    marketCap: "Approximately GBP 44.23 billion",
+    founded: "Incorporated on March 23, 2013"
+  },
+  "RTO": {
+    summary: "Rentokil Initial is a global commercial services group best known for pest control, hygiene, and workplace-related support services.",
+    marketCap: "Approximately GBP 7.84 billion",
+    founded: "Incorporated on April 22, 1980"
+  },
+  "RMV": {
+    summary: "Rightmove is an online property portal focused on residential real estate listings, connecting estate agents, developers, and home seekers through its digital platform.",
+    marketCap: "Approximately GBP 6.53 billion",
+    founded: "Incorporated on March 11, 2000"
+  },
+  "RIO": {
+    summary: "Rio Tinto is a global mining group producing metals and minerals through a geographically diversified portfolio of large-scale operations.",
+    marketCap: "Approximately GBP 72.18 billion",
+    founded: "Incorporated on November 25, 1962"
+  },
+  "RR": {
+    summary: "Rolls-Royce is an aerospace and defense engineering company best known for aircraft engines and power systems serving civil and military markets.",
+    marketCap: "Approximately GBP 5.18 billion",
+    founded: "Incorporated on May 21, 1906"
+  },
+  "SGE": {
+    summary: "Sage Group is a software company specializing in accounting, payroll, and business management tools for small and mid-sized enterprises.",
+    marketCap: "Approximately GBP 7.16 billion",
+    founded: "Incorporated on May 24, 1981"
+  },
+  "SBRY": {
+    summary: "Sainsbury's is a major UK supermarket group selling groceries, food products, and general merchandise through a nationwide retail network.",
+    marketCap: "Approximately GBP 7.34 billion",
+    founded: "Incorporated on August 16, 1924"
+  },
+  "SDR": {
+    summary: "Schroders is an asset management company providing investment management, wealth management, and fund solutions across institutional and private client markets.",
+    marketCap: "Approximately GBP 12.03 billion",
+    founded: "Incorporated on January 20, 1895"
+  },
+  "SMT": {
+    summary: "Scottish Mortgage Trust is an investment trust focused on long-term growth through a globally diversified portfolio of public and private equities.",
+    marketCap: "Approximately GBP 10.24 billion",
+    founded: "Incorporated on August 16, 1909"
+  },
+  "SGRO": {
+    summary: "Segro is a European real estate investment trust focused on industrial and warehouse properties, with a portfolio geared toward logistics and modern urban distribution infrastructure.",
+    marketCap: "Approximately GBP 10.11 billion",
+    founded: "Incorporated on November 27, 1920"
+  },
+  "SVT": {
+    summary: "Severn Trent is a UK water utility company responsible for water supply, wastewater treatment, and related infrastructure services.",
+    marketCap: "Approximately GBP 7.57 billion",
+    founded: "Incorporated on December 18, 1989"
+  },
+  "SHEL": {
+    summary: "Shell is a global energy and petrochemicals company with operations spanning upstream production, downstream refining and marketing, chemicals, and lower-carbon energy initiatives.",
+    marketCap: "Approximately GBP 137.82 billion",
+    founded: "UK corporate lineage dates to March 18, 1907"
+  },
+  "SN": {
+    summary: "Smith & Nephew is a medical technology company focused on orthopaedics, wound care, and sports medicine products used across hospital and clinical settings.",
+    marketCap: "Approximately GBP 6.14 billion",
+    founded: "Incorporated on May 7, 1856"
+  },
+  "SMIN": {
+    summary: "Smiths Group is an engineering company serving industrial, energy, security, and medical markets through a portfolio of specialized technology businesses.",
+    marketCap: "Approximately GBP 4.39 billion",
+    founded: "Incorporated on January 23, 1851"
+  },
+  "SPX": {
+    summary: "Spirax-Sarco is an industrial engineering company specializing in steam-system solutions, thermal energy management, and process-control technologies.",
+    marketCap: "Approximately GBP 7.93 billion",
+    founded: "Incorporated on February 8, 1890"
+  },
+  "SSE": {
+    summary: "SSE is an electricity and gas utility group with operations spanning energy networks, power generation, and retail-related activities.",
+    marketCap: "Approximately GBP 22.47 billion",
+    founded: "Incorporated on November 11, 1975"
+  },
+  "STJ": {
+    summary: "St. James's Place is a wealth management and financial services group serving clients through a large adviser-led distribution network.",
+    marketCap: "Approximately GBP 8.82 billion",
+    founded: "Incorporated on September 3, 1992"
+  },
+  "STAN": {
+    summary: "Standard Chartered is an international banking group with a strong footprint across Asia, Africa, and the Middle East, providing corporate, institutional, and retail banking services.",
+    marketCap: "Approximately GBP 61.35 billion",
+    founded: "Incorporated on March 10, 1969"
   }
 };
 
