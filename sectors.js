@@ -96,8 +96,8 @@ function renderTable(sectors) {
       <td class="num-cell">${fmt(sector.avgEnvironment)}</td>
       <td class="num-cell">${fmt(sector.avgSocial)}</td>
       <td class="num-cell">${fmt(sector.medianESG)}</td>
-      <td>${sector.bestCompany}</td>
-      <td>${sector.worstCompany}</td>
+      <td class="truncate-cell" title="${sector.bestCompany}">${sector.bestCompany}</td>
+      <td class="truncate-cell" title="${sector.worstCompany}">${sector.worstCompany}</td>
       <td class="num-cell">${fmt(sector.range)}</td>
     </tr>
   `).join("");
