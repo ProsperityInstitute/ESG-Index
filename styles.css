@@ -143,7 +143,7 @@ header {
   --nav-pill-border: rgba(208, 216, 206, 0.9);
   --nav-pill-ink: var(--ink-soft);
   --nav-pill-accent: #5f6d82;
-  --nav-pill-soft: #f5ecd9;
+  --nav-pill-soft: #eef2f7;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -191,8 +191,8 @@ header {
 .nav-links a.active,
 .nav-links a:hover {
   background: linear-gradient(180deg, #ffffff 0%, var(--nav-pill-soft) 100%);
-  border-color: #dcc9a0;
-  color: #9b6a1f;
+  border-color: #d6ddd5;
+  color: #4f5d75;
   box-shadow:
     0 10px 20px rgba(16, 25, 43, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.85);
@@ -211,7 +211,7 @@ header {
 .nav-links a[href="companies.html"],
 .nav-links a[href="sectors.html"] {
   --nav-pill-accent: #c6872f;
-  --nav-pill-soft: #f5ecd9;
+  --nav-pill-soft: #eef2f7;
 }
 
 .nav-links a[href="rankings.html"] {
