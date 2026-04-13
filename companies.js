@@ -609,6 +609,7 @@ const DIRECTORY_IR_EMAILS = {
   "AAL": "tyler.broda@angloamerican.com",
   "ANTO": "investorrelations@antofagasta.co.uk",
   "AHT": "kevin.powers@sunbeltrentals.com",
+  "ABF": "+44 (0)20 7404 5959",
   "AV": "IR@aviva.com",
   "AZN": "ir@astrazeneca.com",
   "AUTO": "ir@autotrader.co.uk",
@@ -642,7 +643,9 @@ const DIRECTORY_IR_EMAILS = {
   "GLEN": "martin.fewings@glencore.com",
   "GSK": "GSK.Investor-Relations@gsk.com",
   "HLN": "investor-relations@haleon.com",
+  "HL": "+44 (0)384 2030",
   "HLMA": "investor.relations@halma.com",
+  "HIK": "+44 (0) 20 7399 2760",
   "HSX": "yana.osullivan@hiscox.com",
   "HWDN": "IR@howdens.com",
   "HSBC": "investorrelations@hsbc.com",
@@ -913,7 +916,12 @@ function safeEmail(email) {
   if (!email) return `<span class="sector-name">-</span>`;
 
   const trimmed = String(email).trim();
-  return `<a href="mailto:${trimmed}" class="section-link">${trimmed}</a>`;
+  if (trimmed.includes("@")) {
+    return `<a href="mailto:${trimmed}" class="section-link">${trimmed}</a>`;
+  }
+
+  const telValue = trimmed.replace(/\s+/g, "");
+  return `<a href="tel:${telValue}" class="section-link">${trimmed}</a>`;
 }
 
 function renderTable(rows) {
