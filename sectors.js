@@ -154,6 +154,10 @@ function renderPieChart(sectors) {
       type: "pie",
       labels: sectors.map((s) => s.sector),
       values: sectors.map((s) => s.count),
+      domain: {
+        x: [0.3, 1],
+        y: [0, 1]
+      },
       sort: false,
       direction: "clockwise",
       hole: 0.14,
@@ -176,10 +180,11 @@ function renderPieChart(sectors) {
     margin: { l: 8, r: 8, t: 8, b: 8 },
     showlegend: true,
     legend: {
-      orientation: "h",
-      y: -0.08,
-      x: 0.5,
-      xanchor: "center"
+      orientation: "v",
+      x: 0.01,
+      xanchor: "left",
+      y: 0.5,
+      yanchor: "middle"
     }
   }, {
     responsive: true,
