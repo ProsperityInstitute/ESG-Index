@@ -434,6 +434,48 @@ header {
   object-fit: contain;
 }
 
+.profile-overview-grid {
+  align-items: stretch;
+}
+
+.profile-company-overview,
+.profile-company-facts {
+  padding: 28px 30px;
+}
+
+.profile-company-overview p {
+  max-width: none;
+}
+
+.profile-facts-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.profile-fact {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+}
+
+.profile-fact-label {
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-fact strong {
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--ink);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
