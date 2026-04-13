@@ -139,12 +139,11 @@ header {
   --nav-pill-bg: rgba(255, 255, 255, 0.62);
   --nav-pill-border: rgba(208, 216, 206, 0.9);
   --nav-pill-ink: var(--ink-soft);
-  --nav-pill-accent: var(--green);
-  --nav-pill-soft: var(--green-soft);
+  --nav-pill-accent: #5f6d82;
+  --nav-pill-soft: #eef2f7;
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   padding: 8px 13px;
   border-radius: 999px;
   border: 1px solid var(--nav-pill-border);
@@ -163,34 +162,41 @@ header {
 }
 
 .nav-links a::before {
+  content: none;
+}
+
+.nav-links a::after {
   content: "";
-  width: 7px;
-  height: 7px;
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 2px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--nav-pill-accent) 28%, white);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--nav-pill-accent) 12%, transparent);
+  background: var(--nav-pill-accent);
+  opacity: 0;
+  transform: scaleX(0.55);
+  transform-origin: center;
   transition:
-    background 0.22s ease,
-    box-shadow 0.22s ease,
+    opacity 0.22s ease,
     transform 0.22s ease;
 }
 
 .nav-links a.active,
 .nav-links a:hover {
   background: linear-gradient(180deg, #ffffff 0%, var(--nav-pill-soft) 100%);
-  border-color: color-mix(in srgb, var(--nav-pill-accent) 26%, white);
-  color: var(--nav-pill-accent);
+  border-color: #d6ddd5;
+  color: #4f5d75;
   box-shadow:
     0 10px 20px rgba(16, 25, 43, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.85);
   transform: translateY(-1px);
 }
 
-.nav-links a.active::before,
-.nav-links a:hover::before {
-  background: var(--nav-pill-accent);
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--nav-pill-accent) 16%, transparent);
-  transform: scale(1.04);
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 /* Environment button — slightly darker green */
@@ -204,45 +210,53 @@ header {
 
 .nav-links a[href="rankings.html"] {
   --nav-pill-accent: #24553a;
-  --nav-pill-soft: #e6f1e8;
 }
 
 .nav-links a[href="rankings.html"]:hover,
 .nav-links a[href="rankings.html"].active {
-  color: #1d4a31;
+  box-shadow:
+    0 10px 20px rgba(16, 25, 43, 0.06),
+    0 0 0 1px rgba(36, 85, 58, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 /* ESG button always purple when hovered / active */
 .nav-links a[href="esg.html"] {
   --nav-pill-accent: #5b3db2;
-  --nav-pill-soft: #f1ebfc;
 }
 
 .nav-links a[href="esg.html"]:hover,
 .nav-links a[href="esg.html"].active {
-  color: #5b3db2;
+  box-shadow:
+    0 10px 20px rgba(16, 25, 43, 0.06),
+    0 0 0 1px rgba(91, 61, 178, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 /* Social button always blue when hovered / active */
 .nav-links a[href="social.html"] {
   --nav-pill-accent: #35519f;
-  --nav-pill-soft: #edf1fd;
 }
 
 .nav-links a[href="social.html"]:hover,
 .nav-links a[href="social.html"].active {
-  color: #35519f;
+  box-shadow:
+    0 10px 20px rgba(16, 25, 43, 0.06),
+    0 0 0 1px rgba(53, 81, 159, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 /* Governance button always red when hovered / active */
 .nav-links a[href="governance.html"] {
   --nav-pill-accent: #bb4a4a;
-  --nav-pill-soft: #fbeeee;
 }
 
 .nav-links a[href="governance.html"]:hover,
 .nav-links a[href="governance.html"].active {
-  color: #bb4a4a;
+  box-shadow:
+    0 10px 20px rgba(16, 25, 43, 0.06),
+    0 0 0 1px rgba(187, 74, 74, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 .hero {
