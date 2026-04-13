@@ -2216,25 +2216,14 @@ body.page-social .tier-pill {
   padding: 22px 24px;
 }
 
-.overview-intro-eyebrow {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 12px;
-  border-radius: 999px;
-  background: rgba(47, 139, 87, 0.1);
-  color: #24553a;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.overview-intro-head {
+  margin-bottom: 0;
 }
 
 .overview-intro-card p {
   position: relative;
   z-index: 1;
-  margin: 14px 0 0;
+  margin: 10px 0 0;
   max-width: 980px;
   color: var(--ink-soft);
   font-size: 16px;
