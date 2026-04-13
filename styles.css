@@ -1128,9 +1128,9 @@ body.page-esg {
 
 .sector-table {
   width: 100%;
-  min-width: 980px;
+  min-width: 1240px;
   border-collapse: collapse;
-  table-layout: auto;
+  table-layout: fixed;
 }
 
 .sector-table thead {
@@ -1187,17 +1187,17 @@ body.page-esg {
 
 .sector-table th:nth-child(1),
 .sector-table td:nth-child(1) {
-  width: 4ch;
+  width: 72px;
 }
 
 .sector-table th:nth-child(2),
 .sector-table td:nth-child(2) {
-  width: 16ch;
+  width: 180px;
 }
 
 .sector-table th:nth-child(3),
 .sector-table td:nth-child(3) {
-  width: 7ch;
+  width: 110px;
 }
 
 .sector-table th:nth-child(4),
@@ -1210,14 +1210,14 @@ body.page-esg {
 .sector-table td:nth-child(7),
 .sector-table th:nth-child(10),
 .sector-table td:nth-child(10) {
-  width: 8ch;
+  width: 96px;
 }
 
 .sector-table th:nth-child(8),
 .sector-table td:nth-child(8),
 .sector-table th:nth-child(9),
 .sector-table td:nth-child(9) {
-  width: 1%;
+  width: 190px;
 }
 
 .sector-table th:nth-child(1),
@@ -1235,6 +1235,13 @@ body.page-esg {
 .sector-table th:nth-child(10),
 .sector-table td:nth-child(10) {
   text-align: right;
+}
+
+.sector-table th:nth-child(8),
+.sector-table td:nth-child(8),
+.sector-table th:nth-child(9),
+.sector-table td:nth-child(9) {
+  text-align: left;
 }
 
 /* =========================
