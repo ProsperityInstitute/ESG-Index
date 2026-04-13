@@ -684,24 +684,6 @@ function renderProfileContacts(company) {
   contactBlock.hidden = false;
 }
 
-function renderProfileOverview(company) {
-  const content = getProfileContent(company.Ticker);
-  const marketCapEl = document.getElementById("profileMarketCap");
-  const foundedEl = document.getElementById("profileFounded");
-
-  if (marketCapEl) {
-    marketCapEl.textContent = content
-      ? content.marketCap
-      : "Not yet added";
-  }
-
-  if (foundedEl) {
-    foundedEl.textContent = content
-      ? content.founded
-      : "Not yet added";
-  }
-}
-
 function renderProfileHeader(company) {
   const logo = document.getElementById("profileLogo");
   const logoShell = document.getElementById("profileLogoShell");
@@ -912,7 +894,6 @@ function initProfilePage() {
   }
 
   renderProfileHeader(company);
-  renderProfileOverview(company);
   renderStats(company);
   renderBars(company);
   renderComparisonChart(company);
