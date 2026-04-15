@@ -126,10 +126,12 @@ function renderBarChart(sectors) {
   ], {
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
-    margin: { l: 60, r: 24, t: 10, b: 20 },
+    margin: { l: 60, r: 24, t: 10, b: 90 },
     yaxis: { title: "Average ESG Exposure" },
     xaxis: {
-      showticklabels: false,
+      showticklabels: true,
+      tickangle: -28,
+      automargin: true,
       showgrid: false,
       zeroline: false
     }
@@ -245,10 +247,12 @@ function renderGroupedChart(sectors) {
     barmode: "group",
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
-    margin: { l: 60, r: 30, t: 10, b: 20 },
+    margin: { l: 60, r: 30, t: 10, b: 90 },
     yaxis: { title: "Average Domain Score" },
     xaxis: {
-      showticklabels: false,
+      showticklabels: true,
+      tickangle: -28,
+      automargin: true,
       showgrid: false,
       zeroline: false
     }
