@@ -1213,6 +1213,12 @@ body.page-esg {
   height: auto;
 }
 
+.sector-profile-subchart {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
 .sector-table tbody tr:last-child td {
   border-bottom: 0;
 }

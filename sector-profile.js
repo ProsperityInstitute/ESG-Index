@@ -135,6 +135,65 @@ function renderComparisonChart(summary) {
   );
 }
 
+function renderSubdomainChart(summary) {
+  const labels = [
+    "Climate Targets",
+    "Investment & Transition",
+    "Climate Reporting",
+    "DEI Targets & Representation",
+    "Programmes & Memberships",
+    "Social Incentives"
+  ];
+
+  const values = [
+    mean(summary.rows.map(row => row.Climate_Targets)),
+    mean(summary.rows.map(row => row.Investment_Transition)),
+    mean(summary.rows.map(row => row.Climate_Reporting)),
+    mean(summary.rows.map(row => row.DEI_Targets_Representation)),
+    mean(summary.rows.map(row => row.DEI_Programmes_Memberships)),
+    mean(summary.rows.map(row => row.Social_Incentives))
+  ];
+
+  Plotly.newPlot(
+    "sectorProfileSubdomainChart",
+    [
+      {
+        type: "bar",
+        orientation: "h",
+        y: labels,
+        x: values,
+        text: values.map(value => fmtPct(value)),
+        textposition: "outside",
+        cliponaxis: false,
+        marker: {
+          color: ["#4aa772", "#62a97c", "#7ab090", "#4867c9", "#6b83d8", "#8aa1e6"]
+        },
+        hovertemplate: "<b>%{y}</b><br>Average score: %{x:.1%}<extra></extra>"
+      }
+    ],
+    {
+      paper_bgcolor: "rgba(0,0,0,0)",
+      plot_bgcolor: "rgba(0,0,0,0)",
+      margin: { l: 170, r: 30, t: 10, b: 24 },
+      xaxis: {
+        title: "Average Score",
+        tickformat: ".0%",
+        range: [0, 1],
+        gridcolor: "rgba(16, 25, 43, 0.08)",
+        zeroline: false
+      },
+      yaxis: {
+        automargin: true,
+        autorange: "reversed"
+      }
+    },
+    {
+      responsive: true,
+      displayModeBar: false
+    }
+  );
+}
+
 function renderLeaderboard(summary) {
   const wrap = document.getElementById("sectorProfileLeaderboard");
   if (!wrap) return;
@@ -269,6 +328,7 @@ function initSectorProfilePage() {
   renderHeader(summary);
   renderStats(summary);
   renderComparisonChart(summary);
+  renderSubdomainChart(summary);
   renderLeaderboard(summary);
   renderCompanyChart(summary);
   renderTable(summary);
