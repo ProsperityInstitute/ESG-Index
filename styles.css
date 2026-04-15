@@ -1203,6 +1203,16 @@ body.page-esg {
   min-width: 760px;
 }
 
+.sector-profile-top-grid {
+  align-items: start;
+}
+
+.sector-profile-chart-card,
+.sector-profile-leader-card {
+  align-self: start;
+  height: auto;
+}
+
 .sector-table tbody tr:last-child td {
   border-bottom: 0;
 }
