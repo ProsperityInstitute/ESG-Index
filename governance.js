@@ -88,6 +88,14 @@ function populateFilters(rows) {
   });
 }
 
+function governanceRankMap(rows) {
+  return new Map(
+    [...rows]
+      .sort((a, b) => a.Governance_Reference_Score - b.Governance_Reference_Score)
+      .map((row, index) => [String(row.Ticker).toUpperCase(), index + 1])
+  );
+}
+
 function sortRows(rows) {
   return [...rows].sort((a, b) => {
     let av, bv;
@@ -126,6 +134,7 @@ function sortRows(rows) {
 }
 
 function filteredRows(rows) {
+  const rankMap = governanceRankMap(rows);
   const q = document.getElementById("searchInput")?.value.toLowerCase().trim() || "";
   const sector = document.getElementById("sectorFilter")?.value || "";
   const tier = document.getElementById("tierFilter")?.value || "";
@@ -142,7 +151,10 @@ function filteredRows(rows) {
     return matchesQuery && matchesSector && matchesTier;
   });
 
-  return sortRows(filtered).map((r, i) => ({ ...r, rank: i + 1 }));
+  return sortRows(filtered).map(r => ({
+    ...r,
+    rank: rankMap.get(String(r.Ticker).toUpperCase()) || null
+  }));
 }
 
 function renderTable(rows) {
