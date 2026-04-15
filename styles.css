@@ -2850,6 +2850,36 @@ body.page-social .tier-pill {
   border-top: 1px solid var(--line);
 }
 
+.company-search-card {
+  margin-bottom: 18px;
+}
+
+.company-search-head {
+  margin-bottom: 14px;
+}
+
+.company-search-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.company-search-input {
+  width: 100%;
+}
+
+.company-search-button {
+  min-width: 152px;
+}
+
+.company-search-feedback {
+  min-height: 20px;
+  margin: 10px 2px 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
 @media (max-width: 720px) {
   .breakdown-card-top {
     align-items: flex-start;
@@ -2858,6 +2888,14 @@ body.page-social .tier-pill {
 
   .breakdown-card-value {
     white-space: normal;
+  }
+
+  .company-search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .company-search-button {
+    width: 100%;
   }
 }
 /* =========================

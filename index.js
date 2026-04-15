@@ -119,6 +119,58 @@ function buildSectorAverages(data) {
     .sort((a, b) => a.avgESG - b.avgESG);
 }
 
+function setupCompanySearch(data) {
+  const form = document.getElementById("companySearchForm");
+  const input = document.getElementById("companySearchInput");
+  const options = document.getElementById("companySearchOptions");
+  const feedback = document.getElementById("companySearchFeedback");
+
+  if (!form || !input || !options || !feedback) return;
+
+  const searchEntries = data
+    .map(row => ({
+      company: row.Company,
+      ticker: row.Ticker,
+      label: `${row.Company} (${row.Ticker})`
+    }))
+    .sort((a, b) => a.company.localeCompare(b.company));
+
+  options.innerHTML = searchEntries
+    .map(entry => `<option value="${entry.label}"></option>`)
+    .join("");
+
+  const findMatch = (rawValue) => {
+    const value = String(rawValue || "").trim().toLowerCase();
+    if (!value) return null;
+
+    return searchEntries.find(entry =>
+      entry.label.toLowerCase() === value ||
+      entry.company.toLowerCase() === value ||
+      entry.ticker.toLowerCase() === value
+    ) || searchEntries.find(entry =>
+      entry.company.toLowerCase().includes(value) ||
+      entry.ticker.toLowerCase() === value
+    );
+  };
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const match = findMatch(input.value);
+
+    if (!match) {
+      feedback.textContent = "No matching company found. Try the company name or ticker.";
+      return;
+    }
+
+    feedback.textContent = "";
+    window.location.href = `profile.html?ticker=${encodeURIComponent(match.ticker)}`;
+  });
+
+  input.addEventListener("input", () => {
+    if (feedback.textContent) feedback.textContent = "";
+  });
+}
+
 function renderOverviewIntro(data) {
   const introEl = document.getElementById("overviewIntroText");
   if (!introEl || !data.length) return;
@@ -447,6 +499,7 @@ function initOverviewPage() {
   }
 
   renderOverviewIntro(cappedData);
+  setupCompanySearch(cappedData);
   renderHeroSignals(cappedData);
   renderOverviewStats(cappedData);
   renderBreakdownCards(cappedData);

@@ -66,6 +66,27 @@
 
   <section class="page">
     <div class="wrap">
+      <div class="card company-search-card">
+        <div class="section-head overview-feature-head company-search-head">
+          <div>
+            <h2>Find Your Company</h2>
+            <p>Search by company name or ticker to go directly to its profile page.</p>
+          </div>
+        </div>
+        <form class="company-search-form" id="companySearchForm">
+          <input
+            class="control company-search-input"
+            id="companySearchInput"
+            list="companySearchOptions"
+            placeholder="Search company or ticker..."
+            autocomplete="off"
+          />
+          <datalist id="companySearchOptions"></datalist>
+          <button type="submit" class="btn btn-primary company-search-button">View Profile</button>
+        </form>
+        <p class="company-search-feedback" id="companySearchFeedback" aria-live="polite"></p>
+      </div>
+
       <div class="card overview-intro-card">
         <div class="section-head overview-feature-head overview-intro-head">
           <div>
