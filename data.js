@@ -94,11 +94,114 @@ const RAW_DATA = [
   {"Company":"Tesco","Ticker":"TSCO","Sector":"Retail","Climate_Targets":0.88,"Investment_Transition":0.94,"Climate_Reporting":0.73,"Environment_Score":0.8500,"DEI_Targets_Representation":0.4625,"DEI_Programmes_Memberships":0.6667,"Social_Incentives":0.5000,"Social_Score":0.5431},
   {"Company":"Unilever","Ticker":"ULVR","Sector":"Consumer goods","Climate_Targets":0.88,"Investment_Transition":0.75,"Climate_Reporting":0.67,"Environment_Score":0.7667,"DEI_Targets_Representation":0.6250,"DEI_Programmes_Memberships":0.6667,"Social_Incentives":0.6667,"Social_Score":0.6528},
   {"Company":"Unite Group (United Group)","Ticker":"UTG","Sector":"Real estate","Climate_Targets":0.38,"Investment_Transition":0.00,"Climate_Reporting":0.70,"Environment_Score":0.3600,"DEI_Targets_Representation":0.3000,"DEI_Programmes_Memberships":0.3333,"Social_Incentives":0.6667,"Social_Score":0.4333},
-  {"Company":"United Utilities Group","Ticker":"UU","Sector":"Utilities","Climate_Targets":1.00,"Investment_Transition":0.50,"Climate_Reporting":0.49,"Environment_Score":0.6633,"DEI_Targets_Representation":0.6250,"DEI_Programmes_Memberships":0.6667,"Social_Incentives":0.8333,"Social_Score":0.7083},
-  {"Company":"Vodafone Group","Ticker":"VOD","Sector":"Telecom","Climate_Targets":0.94,"Investment_Transition":0.88,"Climate_Reporting":0.75,"Environment_Score":0.8567,"DEI_Targets_Representation":0.5250,"DEI_Programmes_Memberships":0.6667,"Social_Incentives":0.3333,"Social_Score":0.5083},
-  {"Company":"Weir Group","Ticker":"WEIR","Sector":"Engineering","Climate_Targets":0.58,"Investment_Transition":0.69,"Climate_Reporting":0.66,"Environment_Score":0.6433,"DEI_Targets_Representation":0.5250,"DEI_Programmes_Memberships":0.0000,"Social_Incentives":0.5000,"Social_Score":0.3417},
-  {"Company":"Whitbread","Ticker":"WTB","Sector":"Hospitality","Climate_Targets":0.69,"Investment_Transition":0.19,"Climate_Reporting":0.26,"Environment_Score":0.3800,"DEI_Targets_Representation":0.6875,"DEI_Programmes_Memberships":0.0000,"Social_Incentives":1.0000,"Social_Score":0.5625},
-  {"Company":"WPP","Ticker":"WPP","Sector":"Advertising","Climate_Targets":0.69,"Investment_Transition":0.19,"Climate_Reporting":0.38,"Environment_Score":0.4200,"DEI_Targets_Representation":0.6250,"DEI_Programmes_Memberships":0.3333,"Social_Incentives":0.6667,"Social_Score":0.5417}
+{"Company":"United Utilities Group","Ticker":"UU","Sector":"Utilities","Climate_Targets":1.00,"Investment_Transition":0.50,"Climate_Reporting":0.49,"Environment_Score":0.6633,"DEI_Targets_Representation":0.6250,"DEI_Programmes_Memberships":0.6667,"Social_Incentives":0.8333,"Social_Score":0.7083},
+{"Company":"Vodafone Group","Ticker":"VOD","Sector":"Telecom","Climate_Targets":0.94,"Investment_Transition":0.88,"Climate_Reporting":0.75,"Environment_Score":0.8567,"DEI_Targets_Representation":0.5250,"DEI_Programmes_Memberships":0.6667,"Social_Incentives":0.3333,"Social_Score":0.5083},
+{"Company":"Weir Group","Ticker":"WEIR","Sector":"Engineering","Climate_Targets":0.58,"Investment_Transition":0.69,"Climate_Reporting":0.66,"Environment_Score":0.6433,"DEI_Targets_Representation":0.5250,"DEI_Programmes_Memberships":0.0000,"Social_Incentives":0.5000,"Social_Score":0.3417},
+{"Company":"Whitbread","Ticker":"WTB","Sector":"Hospitality","Climate_Targets":0.69,"Investment_Transition":0.19,"Climate_Reporting":0.26,"Environment_Score":0.3800,"DEI_Targets_Representation":0.6875,"DEI_Programmes_Memberships":0.0000,"Social_Incentives":1.0000,"Social_Score":0.5625},
+{"Company":"WPP","Ticker":"WPP","Sector":"Advertising","Climate_Targets":0.69,"Investment_Transition":0.19,"Climate_Reporting":0.38,"Environment_Score":0.4200,"DEI_Targets_Representation":0.6250,"DEI_Programmes_Memberships":0.3333,"Social_Incentives":0.6667,"Social_Score":0.5417}
+];
+
+const SOCIAL_DATA = [
+  { Company: "3i", Ticker: "III", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.61 },
+  { Company: "Admiral Group", Ticker: "ADM", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.83, Social_Score: 0.51 },
+  { Company: "Airtel Africa", Ticker: "AAF", DEI_Targets_Representation: 0.48, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.33, Social_Score: 0.27 },
+  { Company: "Alliance Witan", Ticker: "ALW", DEI_Targets_Representation: 0.33, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.28 },
+  { Company: "Anglo American", Ticker: "AAL", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.50, Social_Score: 0.56 },
+  { Company: "Antofagasta", Ticker: "ANTO", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.33, Social_Score: 0.32 },
+  { Company: "Ashtead Group", Ticker: "AHT", DEI_Targets_Representation: 0.57, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.36 },
+  { Company: "Associated British Foods", Ticker: "ABF", DEI_Targets_Representation: 0.87, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.33, Social_Score: 0.51 },
+  { Company: "AstraZeneca", Ticker: "AZN", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 1.00, Social_Incentives: 0.67, Social_Score: 0.82 },
+  { Company: "Auto Trader Group", Ticker: "AUTO", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.64 },
+  { Company: "Aviva", Ticker: "AV", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.61 },
+  { Company: "Babcock International Group", Ticker: "BAB", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.44 },
+  { Company: "BAE Systems", Ticker: "BAESY", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.57 },
+  { Company: "Barclays", Ticker: "BARC", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.33, Social_Incentives: 1.00, Social_Score: 0.72 },
+  { Company: "Barratt Developments", Ticker: "BDEV", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.48 },
+  { Company: "Beazley", Ticker: "BEZ", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.61 },
+  { Company: "Berkeley Group Holdings", Ticker: "BKG", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.46 },
+  { Company: "BP", Ticker: "BP", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.43 },
+  { Company: "British American Tobacco", Ticker: "BATS", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.67, Social_Score: 0.75 },
+  { Company: "British Land", Ticker: "BLND", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.83, Social_Score: 0.69 },
+  { Company: "BT Group", Ticker: "BT.A", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.83, Social_Score: 0.48 },
+  { Company: "Bunzl", Ticker: "BNZL", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.33, Social_Score: 0.37 },
+  { Company: "Burberry Group", Ticker: "BRBY", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 1.00, Social_Incentives: 1.00, Social_Score: 0.97 },
+  { Company: "Centrica", Ticker: "CNA", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.83, Social_Score: 0.67 },
+  { Company: "Coca-Cola HBC", Ticker: "CCH", DEI_Targets_Representation: 0.57, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.50, Social_Score: 0.47 },
+  { Company: "Compass Group", Ticker: "CPG", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.83, Social_Score: 0.56 },
+  { Company: "Convatec Group", Ticker: "CTEC", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.50, Social_Score: 0.54 },
+  { Company: "Croda International", Ticker: "CRDA", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.83, Social_Score: 0.48 },
+  { Company: "DCC plc", Ticker: "DCC", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.33, Social_Score: 0.32 },
+  { Company: "Diageo", Ticker: "DGE", DEI_Targets_Representation: 1.00, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.67 },
+  { Company: "Diploma", Ticker: "DPLM", DEI_Targets_Representation: 0.57, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.41 },
+  { Company: "Endeavour Mining", Ticker: "EDV", DEI_Targets_Representation: 0.57, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.41 },
+  { Company: "Entain", Ticker: "ENT", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.83, Social_Score: 0.48 },
+  { Company: "EasyJet", Ticker: "EZJ", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.44 },
+  { Company: "Experian", Ticker: "EXPN", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.50 },
+  { Company: "F&C Investment Trust", Ticker: "FCIT", DEI_Targets_Representation: 0.67, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.39 },
+  { Company: "Fresnillo", Ticker: "FRES", DEI_Targets_Representation: 0.48, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.33, Social_Score: 0.38 },
+  { Company: "Games Workshop", Ticker: "GAW", DEI_Targets_Representation: 0.37, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.29 },
+  { Company: "Glencore", Ticker: "GLEN", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.40 },
+  { Company: "GSK", Ticker: "GSK", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.67, Social_Score: 0.71 },
+  { Company: "Haleon", Ticker: "HLN", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.59 },
+  { Company: "Halma", Ticker: "HLMA", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.83, Social_Score: 0.58 },
+  { Company: "Hargreaves Lansdown", Ticker: "HRGV", DEI_Targets_Representation: 0.67, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.50, Social_Score: 0.50 },
+  { Company: "Hikma Pharmaceuticals", Ticker: "HIK", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.33, Social_Score: 0.34 },
+  { Company: "Hiscox", Ticker: "HSX", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.64 },
+  { Company: "Howdens Joinery Group", Ticker: "HWDN", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.33, Social_Score: 0.37 },
+  { Company: "HSBC Holdings", Ticker: "HSBC", DEI_Targets_Representation: 0.87, DEI_Programmes_Memberships: 1.00, Social_Incentives: 0.50, Social_Score: 0.79 },
+  { Company: "IMI plc", Ticker: "IMI", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.46 },
+  { Company: "Imperial Brands", Ticker: "IMB", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.83, Social_Score: 0.59 },
+  { Company: "Informa", Ticker: "INF", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.83, Social_Score: 0.51 },
+  { Company: "Intercontinental Hotels Group", Ticker: "IHG", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.61 },
+  { Company: "Intermediate Capital Group", Ticker: "ICG", DEI_Targets_Representation: 0.67, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.56 },
+  { Company: "Intertek Group", Ticker: "ITRK", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.33, Social_Score: 0.32 },
+  { Company: "International Cons. Airlines (IAG)", Ticker: "IAG", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.47 },
+  { Company: "JD Sports Fashion", Ticker: "JD", DEI_Targets_Representation: 0.48, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.49 },
+  { Company: "Kingfisher", Ticker: "KGF", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.83, Social_Score: 0.71 },
+  { Company: "Land Securities", Ticker: "LAND", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.61 },
+  { Company: "Legal & General", Ticker: "LGEN", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.33, Social_Incentives: 1.00, Social_Score: 0.72 },
+  { Company: "Lloyds Banking Group", Ticker: "LLOY", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.67, Social_Incentives: 1.00, Social_Score: 0.86 },
+  { Company: "LondonMetric Property", Ticker: "LMP", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.83, Social_Score: 0.56 },
+  { Company: "London Stock Exchange Group", Ticker: "LSEG", DEI_Targets_Representation: 0.75, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.58 },
+  { Company: "M&G", Ticker: "MNG", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.50, Social_Score: 0.56 },
+  { Company: "Marks & Spencer", Ticker: "MKS", DEI_Targets_Representation: 0.87, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.62 },
+  { Company: "Melrose Industries", Ticker: "MRO", DEI_Targets_Representation: 0.57, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.41 },
+  { Company: "Mondi", Ticker: "MNDI", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.40 },
+  { Company: "National Grid", Ticker: "NG", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.67, Social_Score: 0.72 },
+  { Company: "NatWest Group", Ticker: "NWG", DEI_Targets_Representation: 1.00, DEI_Programmes_Memberships: 0.73, Social_Incentives: 0.50, Social_Score: 0.74 },
+  { Company: "Next plc", Ticker: "NXT", DEI_Targets_Representation: 0.28, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.33, Social_Score: 0.32 },
+  { Company: "Pearson", Ticker: "PSON", DEI_Targets_Representation: 1.00, DEI_Programmes_Memberships: 0.33, Social_Incentives: 1.00, Social_Score: 0.78 },
+  { Company: "Persimmon", Ticker: "PSN", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.46 },
+  { Company: "Phoenix Group", Ticker: "PHNX", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.64 },
+  { Company: "Prudential", Ticker: "PRU", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.33, Social_Score: 0.54 },
+  { Company: "Reckitt Benckiser", Ticker: "RKT", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.48 },
+  { Company: "RELX", Ticker: "REL", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.57 },
+  { Company: "Rentokil Initial", Ticker: "RTO", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.37 },
+  { Company: "Rightmove", Ticker: "RMV", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.47 },
+  { Company: "Rio Tinto", Ticker: "RIO", DEI_Targets_Representation: 0.57, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.83, Social_Score: 0.58 },
+  { Company: "Rolls-Royce Holdings", Ticker: "RR", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.43 },
+  { Company: "Sage Group", Ticker: "SGE", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.50 },
+  { Company: "Sainsbury's", Ticker: "SBRY", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.83, Social_Score: 0.69 },
+  { Company: "Schroders", Ticker: "SDR", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.50, Social_Score: 0.69 },
+  { Company: "Scottish Mortgage Trust", Ticker: "SMT", DEI_Targets_Representation: 0.67, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.33, Social_Score: 0.33 },
+  { Company: "Segro", Ticker: "SGRO", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.83, Social_Score: 0.62 },
+  { Company: "Severn Trent", Ticker: "SVT", DEI_Targets_Representation: 1.00, DEI_Programmes_Memberships: 0.33, Social_Incentives: 1.00, Social_Score: 0.78 },
+  { Company: "Shell plc", Ticker: "SHEL", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.83, Social_Score: 0.51 },
+  { Company: "Smith & Nephew", Ticker: "SN", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.43 },
+  { Company: "Smiths Group", Ticker: "SMIN", DEI_Targets_Representation: 0.57, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.67, Social_Score: 0.41 },
+  { Company: "Spirax-Sarco (Spirax Group)", Ticker: "SPX", DEI_Targets_Representation: 0.78, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.59 },
+  { Company: "SSE plc", Ticker: "SSE", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.67, Social_Incentives: 1.00, Social_Score: 0.83 },
+  { Company: "St. James's Place", Ticker: "STJ", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.83, Social_Score: 0.67 },
+  { Company: "Standard Chartered", Ticker: "STAN", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.67, Social_Score: 0.68 },
+  { Company: "Taylor Wimpey", Ticker: "TW", DEI_Targets_Representation: 0.53, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.33, Social_Score: 0.29 },
+  { Company: "Tesco", Ticker: "TSCO", DEI_Targets_Representation: 0.62, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.50, Social_Score: 0.59 },
+  { Company: "Unilever", Ticker: "ULVR", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.67, Social_Score: 0.72 },
+  { Company: "Unite Group (United Group)", Ticker: "UTG", DEI_Targets_Representation: 0.40, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.47 },
+  { Company: "United Utilities Group", Ticker: "UU", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.83, Social_Score: 0.78 },
+  { Company: "Vodafone Group", Ticker: "VOD", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.67, Social_Incentives: 0.33, Social_Score: 0.57 },
+  { Company: "Weir Group", Ticker: "WEIR", DEI_Targets_Representation: 0.70, DEI_Programmes_Memberships: 0.00, Social_Incentives: 0.50, Social_Score: 0.40 },
+  { Company: "Whitbread", Ticker: "WTB", DEI_Targets_Representation: 0.92, DEI_Programmes_Memberships: 0.00, Social_Incentives: 1.00, Social_Score: 0.64 },
+  { Company: "WPP", Ticker: "WPP", DEI_Targets_Representation: 0.83, DEI_Programmes_Memberships: 0.33, Social_Incentives: 0.67, Social_Score: 0.61 }
 ];
 
 const CONSOLIDATED_SECTOR_ORDER = [
@@ -218,7 +321,32 @@ const CONSOLIDATED_SECTOR_BY_TICKER = {
   "WPP": "Consumer Discretionary"
 };
 
-const cappedData = RAW_DATA.map(d => {
+const SOCIAL_TICKER_ALIASES = {
+  BA: "BAESY",
+  HL: "HRGV"
+};
+
+const socialDataByTicker = new Map(
+  SOCIAL_DATA.map(entry => [entry.Ticker, entry])
+);
+
+const mergedData = RAW_DATA.map(d => {
+  const socialEntry = socialDataByTicker.get(d.Ticker) || socialDataByTicker.get(SOCIAL_TICKER_ALIASES[d.Ticker]);
+
+  if (!socialEntry) {
+    return d;
+  }
+
+  return {
+    ...d,
+    DEI_Targets_Representation: socialEntry.DEI_Targets_Representation,
+    DEI_Programmes_Memberships: socialEntry.DEI_Programmes_Memberships,
+    Social_Incentives: socialEntry.Social_Incentives,
+    Social_Score: socialEntry.Social_Score
+  };
+});
+
+const cappedData = mergedData.map(d => {
   const clamp = v => Math.max(0, Math.min(1, Number(v) || 0));
 
   const environmentScore = clamp(d.Environment_Score);
