@@ -2393,6 +2393,7 @@ body.page-social .tier-pill {
 
 .page-home .stats-strip,
 .page-home .overview-intro-card,
+.page-home .company-search-card,
 .page-home .overview-breakdown-card,
 .page-home .overview-leaderboard-card,
 .page-home .construction {
@@ -2410,6 +2411,7 @@ body.page-social .tier-pill {
 
 .page-home .stats-strip::after,
 .page-home .overview-intro-card::after,
+.page-home .company-search-card::after,
 .page-home .overview-breakdown-card::after,
 .page-home .overview-leaderboard-card::after,
 .page-home .construction::after {
@@ -2430,6 +2432,7 @@ body.page-social .tier-pill {
 
 .page-home .stats-strip > .wrap,
 .page-home .overview-intro-card > *,
+.page-home .company-search-card > *,
 .page-home .overview-breakdown-card > *,
 .page-home .overview-leaderboard-card > *,
 .page-home .construction > * {
@@ -2857,15 +2860,6 @@ body.page-social .tier-pill {
 
 .company-search-head {
   margin-bottom: 12px;
-}
-
-.company-search-head h2 {
-  margin: 0 0 4px;
-}
-
-.company-search-head p {
-  margin: 0;
-  color: var(--ink-soft);
 }
 
 .company-search-form {
