@@ -347,6 +347,38 @@ header {
   line-height: 1.6;
 }
 
+.hero-quote {
+  max-width: 700px;
+  margin-top: 22px;
+  padding: 18px 20px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+  box-shadow:
+    0 14px 28px rgba(3, 8, 18, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hero-quote p {
+  margin: 0;
+  max-width: none;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.hero-quote span {
+  display: block;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .hero-actions {
   margin-top: 28px;
   display: flex;
@@ -2277,6 +2309,10 @@ body.page-social .score-table th:nth-child(8) .header-cell {
     font-size: 58px;
   }
 
+  .hero-quote p {
+    font-size: 20px;
+  }
+
   .nav {
     align-items: flex-start;
     flex-direction: column;
@@ -2401,6 +2437,14 @@ body.page-social .score-table th:nth-child(8) .header-cell {
 
   .btn {
     width: 100%;
+  }
+
+  .hero-quote {
+    padding: 16px 16px 14px;
+  }
+
+  .hero-quote p {
+    font-size: 18px;
   }
 
   #profileStatsGrid {
