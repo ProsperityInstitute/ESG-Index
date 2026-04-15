@@ -977,7 +977,10 @@ function renderClosestPeers(company) {
     return `
       <a class="profile-peer-row" href="profile.html?ticker=${encodeURIComponent(peer.Ticker)}">
         <div class="profile-peer-main">
-          <div class="profile-peer-name">${peer.Company}</div>
+          <div class="profile-peer-title">
+            <img src="assets/images/${String(peer.Ticker).toUpperCase()}.png" alt="${peer.Company} logo" class="profile-peer-logo" onerror="this.style.display='none'">
+            <div class="profile-peer-name">${peer.Company}</div>
+          </div>
           <div class="profile-peer-meta">
             <span class="ticker-badge">${peer.Ticker}</span>
             <span>${peer.Sector}</span>

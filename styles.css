@@ -2007,6 +2007,26 @@ body.page-social .score-table th:nth-child(8) .header-cell {
   min-width: 0;
 }
 
+.profile-peer-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.profile-peer-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 4px 10px rgba(16, 25, 43, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  padding: 4px;
+}
+
 .profile-peer-name {
   font-size: 16px;
   font-weight: 700;
