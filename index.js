@@ -181,7 +181,7 @@ function renderOverviewIntro(data) {
   const lowest = sorted[0];
   const highest = sorted[sorted.length - 1];
 
-  introEl.textContent = `The ShareReaction Index is a high-level guide to how FTSE 100 companies balance ESG priorities against shareholder interests. It brings together ${data.length} companies across ${sectors} sectors, combines the live Environment and Social modules into one composite score, and highlights where exposure is concentrated across the market. On the current public model, the average ESG exposure is ${fmtPct(avgESG)}, ranging from ${lowest.Ticker} at ${fmtPct(lowest.ESG_Score)} to ${highest.Ticker} at ${fmtPct(highest.ESG_Score)}.`;
+  introEl.textContent = `The ShareReaction Index is a high-level guide to how FTSE 100 companies prioritise ESG initiatives over shareholder interests. It brings together ${data.length} companies across ${sectors} sectors, combines the live Environment and Social modules into one composite score, and highlights where exposure is concentrated across the market. On the current public model, the average ESG exposure is ${fmtPct(avgESG)}, ranging from ${lowest.Ticker} at ${fmtPct(lowest.ESG_Score)} to ${highest.Ticker} at ${fmtPct(highest.ESG_Score)}.`;
 }
 
 function renderHeroSignals(data) {
