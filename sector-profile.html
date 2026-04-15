@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sector Profile | FTSE 100 ESG Exposure Index</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script defer src="data.js"></script>
+  <script defer src="sector-profile.js"></script>
+</head>
+<body class="page-sectors">
+  <header>
+    <div class="wrap nav">
+      <a href="index.html" class="brand">
+        <img src="PI_logo.png" alt="Prosperity Institute logo" class="brand-mark" />
+        <div class="brand-name">ShareReaction Index</div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="esg.html">Full ESG Index</a>
+        <a href="rankings.html">Environment</a>
+        <a href="social.html">Social</a>
+        <a href="governance.html">Governance</a>
+        <a href="sectors.html" class="active">Sectors</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="companies.html">Company Directory</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="profile-hero-copy">
+        <div class="eyebrow">Sector Profile</div>
+        <div class="profile-hero-title">
+          <h1>
+            <span id="sectorProfileName">Sector</span>
+            <span class="accent">Analytics</span>
+          </h1>
+        </div>
+        <p id="sectorProfileIntro">
+          Sector-level analytics across the live Environment and Social modules.
+        </p>
+
+        <div class="hero-actions">
+          <a href="sectors.html" class="btn btn-primary">Back to Sector Analysis</a>
+          <a href="companies.html" class="btn btn-secondary">Browse Companies</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <h3>Sector Snapshot</h3>
+        <p id="sectorProfileMetaText">
+          Comparative context for the selected sector.
+        </p>
+        <div class="signal-list" id="sectorProfileSignalList"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="wrap stats-grid" id="sectorProfileStatsGrid"></div>
+  </div>
+
+  <section class="page">
+    <div class="wrap">
+      <div class="overview-feature-grid">
+        <div class="card overview-breakdown-card">
+          <div class="section-head overview-feature-head">
+            <div>
+              <h2>Sector vs Index</h2>
+              <p>How this sector compares with the full-index average across the live domains.</p>
+            </div>
+          </div>
+          <div id="sectorProfileComparisonChart" style="width:100%;height:420px;"></div>
+        </div>
+
+        <div class="card overview-leaderboard-card">
+          <div class="section-head overview-feature-head">
+            <div>
+              <h2>Sector Leaders</h2>
+              <p>The lowest and highest ESG exposure companies inside this sector.</p>
+            </div>
+          </div>
+          <div class="leaderboard-list sector-profile-leaderboard" id="sectorProfileLeaderboard"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card sector-panel-card">
+        <div class="section-head sector-head">
+          <div>
+            <h2>Company Distribution</h2>
+            <p>Sorted company ESG exposure scores within this sector.</p>
+          </div>
+        </div>
+        <div id="sectorProfileCompanyChart" style="width:100%;height:520px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card sector-panel-card">
+        <div class="section-head sector-head">
+          <div>
+            <h2>Sector Companies</h2>
+            <p>One-stop view of every company in this sector, ranked by average ESG exposure.</p>
+          </div>
+        </div>
+        <div class="sector-table-wrap">
+          <table class="sector-table sector-profile-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Company</th>
+                <th>Ticker</th>
+                <th>ESG</th>
+                <th>Environment</th>
+                <th>Social</th>
+              </tr>
+            </thead>
+            <tbody id="sectorProfileTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      Prosperity Institute's ShareReaction Index - Sector Profile
+    </div>
+  </footer>
+</body>
+</html>

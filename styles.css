@@ -1199,6 +1199,10 @@ body.page-esg {
   overflow: hidden;
 }
 
+.sector-profile-table {
+  min-width: 760px;
+}
+
 .sector-table tbody tr:last-child td {
   border-bottom: 0;
 }

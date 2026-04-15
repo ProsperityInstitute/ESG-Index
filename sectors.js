@@ -16,6 +16,10 @@ function fmt(num) {
   return Number(num).toFixed(3);
 }
 
+function sectorProfileUrl(sector) {
+  return `sector-profile.html?sector=${encodeURIComponent(sector)}`;
+}
+
 function buildSectorData(data) {
   const grouped = {};
 
@@ -65,19 +69,19 @@ function renderStats(sectors) {
 
   grid.innerHTML = `
     <div class="stat stat-best">
-      <div class="stat-value">${best.sector}</div>
+      <div class="stat-value"><a href="${sectorProfileUrl(best.sector)}" style="color: inherit; text-decoration: none;">${best.sector}</a></div>
       <div class="stat-label">Best sector</div>
     </div>
     <div class="stat stat-worst">
-      <div class="stat-value">${worst.sector}</div>
+      <div class="stat-value"><a href="${sectorProfileUrl(worst.sector)}" style="color: inherit; text-decoration: none;">${worst.sector}</a></div>
       <div class="stat-label">Worst sector</div>
     </div>
     <div class="stat">
-      <div class="stat-value">${widest.sector}</div>
+      <div class="stat-value"><a href="${sectorProfileUrl(widest.sector)}" style="color: inherit; text-decoration: none;">${widest.sector}</a></div>
       <div class="stat-label">Widest spread</div>
     </div>
     <div class="stat">
-      <div class="stat-value">${tightest.sector}</div>
+      <div class="stat-value"><a href="${sectorProfileUrl(tightest.sector)}" style="color: inherit; text-decoration: none;">${tightest.sector}</a></div>
       <div class="stat-label">Most consistent</div>
     </div>
   `;
@@ -90,7 +94,7 @@ function renderTable(sectors) {
   tbody.innerHTML = sectors.map(sector => `
     <tr>
       <td class="num-cell">${sector.rank}</td>
-      <td class="sector-name-cell">${sector.sector}</td>
+      <td class="sector-name-cell"><a href="${sectorProfileUrl(sector.sector)}">${sector.sector}</a></td>
       <td class="num-cell">${sector.count}</td>
       <td class="num-cell">${fmt(sector.avgESG)}</td>
       <td class="num-cell">${fmt(sector.avgEnvironment)}</td>
@@ -139,6 +143,15 @@ function renderBarChart(sectors) {
     responsive: true,
     displayModeBar: false
   });
+
+  const barChart = document.getElementById("sectorBarChart");
+  if (barChart && !barChart.dataset.boundClick) {
+    barChart.on("plotly_click", (event) => {
+      const sector = event?.points?.[0]?.x;
+      if (sector) window.location.href = sectorProfileUrl(sector);
+    });
+    barChart.dataset.boundClick = "true";
+  }
 }
 
 function renderPieChart(sectors) {
@@ -198,6 +211,15 @@ function renderPieChart(sectors) {
     responsive: true,
     displayModeBar: false
   });
+
+  const pieChart = document.getElementById("sectorPieChart");
+  if (pieChart && !pieChart.dataset.boundClick) {
+    pieChart.on("plotly_click", (event) => {
+      const sector = event?.points?.[0]?.label;
+      if (sector) window.location.href = sectorProfileUrl(sector);
+    });
+    pieChart.dataset.boundClick = "true";
+  }
 }
 
 function renderBoxPlot(sectors) {
@@ -223,6 +245,15 @@ function renderBoxPlot(sectors) {
     responsive: true,
     displayModeBar: false
   });
+
+  const boxChart = document.getElementById("sectorBoxPlot");
+  if (boxChart && !boxChart.dataset.boundClick) {
+    boxChart.on("plotly_click", (event) => {
+      const sector = event?.points?.[0]?.data?.name;
+      if (sector) window.location.href = sectorProfileUrl(sector);
+    });
+    boxChart.dataset.boundClick = "true";
+  }
 }
 
 function renderGroupedChart(sectors) {
@@ -260,6 +291,15 @@ function renderGroupedChart(sectors) {
     responsive: true,
     displayModeBar: false
   });
+
+  const groupedChart = document.getElementById("sectorGroupedChart");
+  if (groupedChart && !groupedChart.dataset.boundClick) {
+    groupedChart.on("plotly_click", (event) => {
+      const sector = event?.points?.[0]?.x;
+      if (sector) window.location.href = sectorProfileUrl(sector);
+    });
+    groupedChart.dataset.boundClick = "true";
+  }
 }
 
 function initSectorsPage() {
