@@ -950,48 +950,47 @@ function renderComparisonChart(company) {
   );
 }
 
-function renderRelativeChart(company) {
-  const overallESGRank = rankOfTicker("ESG_Score", company.Ticker);
-  const overallEnvRank = rankOfTicker("Environment_Score", company.Ticker);
-  const overallSocRank = rankOfTicker("Social_Score", company.Ticker);
+function renderClosestPeers(company) {
+  const container = document.getElementById("profilePeerList");
+  if (!container) return;
 
-  const sectorESGRank = sectorRankOfTicker("ESG_Score", company.Ticker, company.Sector);
-  const sectorEnvRank = sectorRankOfTicker("Environment_Score", company.Ticker, company.Sector);
-  const sectorSocRank = sectorRankOfTicker("Social_Score", company.Ticker, company.Sector);
+  const peers = [...cappedData]
+    .filter(row => row.Ticker !== company.Ticker)
+    .map(row => ({
+      ...row,
+      scoreGap: Math.abs((row.ESG_Score || 0) - (company.ESG_Score || 0)),
+      sameSector: row.Sector === company.Sector
+    }))
+    .sort((a, b) => {
+      if (a.scoreGap !== b.scoreGap) return a.scoreGap - b.scoreGap;
+      if (a.sameSector !== b.sameSector) return a.sameSector ? -1 : 1;
+      return a.ESG_Score - b.ESG_Score;
+    })
+    .slice(0, 5);
 
-  Plotly.newPlot(
-    "profileRelativeChart",
-    [
-      {
-        type: "bar",
-        name: "Overall Rank",
-        x: ["ESG", "Environment", "Social"],
-        y: [overallESGRank, overallEnvRank, overallSocRank],
-        marker: { color: "#6d4cc4" }
-      },
-      {
-        type: "bar",
-        name: "Sector Rank",
-        x: ["ESG", "Environment", "Social"],
-        y: [sectorESGRank, sectorEnvRank, sectorSocRank],
-        marker: { color: "#d95d5d" }
-      }
-    ],
-    {
-      barmode: "group",
-      paper_bgcolor: "rgba(0,0,0,0)",
-      plot_bgcolor: "rgba(0,0,0,0)",
-      margin: { l: 50, r: 20, t: 10, b: 40 },
-      yaxis: {
-        title: "Rank",
-        autorange: "reversed"
-      }
-    },
-    {
-      responsive: true,
-      displayModeBar: false
-    }
-  );
+  container.innerHTML = peers.map(peer => {
+    const delta = peer.ESG_Score - company.ESG_Score;
+    const deltaLabel = delta === 0
+      ? "Same score"
+      : `${delta > 0 ? "+" : ""}${fmtPct(delta)} vs ${company.Ticker}`;
+
+    return `
+      <a class="profile-peer-row" href="profile.html?ticker=${encodeURIComponent(peer.Ticker)}">
+        <div class="profile-peer-main">
+          <div class="profile-peer-name">${peer.Company}</div>
+          <div class="profile-peer-meta">
+            <span class="ticker-badge">${peer.Ticker}</span>
+            <span>${peer.Sector}</span>
+            ${peer.sameSector ? '<span class="profile-peer-sector-tag">Same sector</span>' : ""}
+          </div>
+        </div>
+        <div class="profile-peer-score">
+          <strong>${fmtPct(peer.ESG_Score)}</strong>
+          <span>${deltaLabel}</span>
+        </div>
+      </a>
+    `;
+  }).join("");
 }
 
 function initProfilePage() {
@@ -1023,7 +1022,7 @@ function initProfilePage() {
   renderStats(company);
   renderBars(company);
   renderComparisonChart(company);
-  renderRelativeChart(company);
+  renderClosestPeers(company);
 }
 
 document.addEventListener("DOMContentLoaded", initProfilePage);
