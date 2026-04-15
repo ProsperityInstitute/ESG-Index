@@ -877,7 +877,7 @@ function renderStats(company) {
       <div class="stat-label">Composite ESG</div>
     </div>
     <div class="stat">
-      <div class="stat-value">${company.Sector}</div>
+      <div class="stat-value"><a href="sector-profile.html?sector=${encodeURIComponent(company.Sector)}" style="color: inherit; text-decoration: none;">${company.Sector}</a></div>
       <div class="stat-label">Sector</div>
     </div>
   `;

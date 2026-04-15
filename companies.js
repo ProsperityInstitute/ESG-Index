@@ -937,7 +937,7 @@ function renderTable(rows) {
   </div>
 </td>
       <td><span class="ticker-badge">${r.Ticker}</span></td>
-      <td><span class="sector-name">${r.Sector}</span></td>
+      <td><a href="sector-profile.html?sector=${encodeURIComponent(r.Sector)}" class="sector-name">${r.Sector}</a></td>
       <td>${safeLink(r.Website, "Website")}</td>
       <td>${safeEmail(r.IR_Email)}</td>
       <td><span class="sector-name">${r.HQ_Address || "-"}</span></td>
