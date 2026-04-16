@@ -716,23 +716,23 @@ header {
 }
 
 .tier-indicator.best {
-  background: #2f8b57;
+  background: #1f7a46;
 }
 
 .tier-indicator.good {
-  background: #c6872f;
+  background: #4f9b63;
 }
 
 .tier-indicator.moderate {
-  background: #f4a261;
+  background: #4f9b63;
 }
 
 .tier-indicator.poor {
-  background: #d95d5d;
+  background: #c96a2b;
 }
 
 .tier-indicator.wasteful {
-  background: #8b4545;
+  background: #d95d5d;
 }
 
 .score-tier strong {
@@ -1752,8 +1752,8 @@ tbody tr:nth-child(even) td {
 }
 
 .rank-badge.rank-tier-moderate {
-  color: #b7811f;
-  background: #f8edd8;
+  color: #4f9b63;
+  background: #eef8f0;
 }
 
 .rank-badge.rank-tier-poor {
@@ -1907,8 +1907,8 @@ tbody tr:nth-child(even) td {
 }
 
 .tier-moderate {
-  color: #b7811f;
-  background: #f8edd8;
+  color: #4f9b63;
+  background: #eef8f0;
 }
 
 .tier-poor {
@@ -3358,19 +3358,19 @@ body.page-social .tier-pill {
 }
 
 .governance-score-best {
-  color: var(--green);
+  color: #1f7a46;
 }
 
 .governance-score-good {
-  color:var(--green);
+  color: #4f9b63;
 }
 
 .governance-score-moderate {
-  color: var(--yellow);
+  color: #4f9b63;
 }
 
 .governance-score-poor {
-  color: var(--red);
+  color: #c96a2b;
 }
 
 .governance-score-wasteful {

@@ -388,25 +388,22 @@ function pct(v) {
 }
 
 function tierKey(v) {
-  if (v < 0.20) return 'best';
-  if (v < 0.40) return 'good';
-  if (v < 0.60) return 'moderate';
-  if (v < 0.80) return 'poor';
+  if (v < 0.25) return 'best';
+  if (v < 0.50) return 'moderate';
+  if (v < 0.75) return 'poor';
   return 'wasteful';
 }
 
 function tierLabel(v) {
-  if (v < 0.20) return 'Best';
-  if (v < 0.40) return 'Good';
-  if (v < 0.60) return 'Moderate';
-  if (v < 0.80) return 'Poor';
+  if (v < 0.25) return 'Best';
+  if (v < 0.50) return 'Moderate';
+  if (v < 0.75) return 'Poor';
   return 'Wasteful';
 }
 
 function tierColor(tier) {
-  if (tier === 'best') return 'var(--green)';
-  if (tier === 'good') return '#4f9b63';
-  if (tier === 'moderate') return 'var(--amber)';
+  if (tier === 'best') return '#1f7a46';
+  if (tier === 'moderate') return '#4f9b63';
   if (tier === 'poor') return '#c96a2b';
   return 'var(--red)';
 }
