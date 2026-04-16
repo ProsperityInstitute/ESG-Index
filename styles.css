@@ -2576,6 +2576,7 @@ body.page-social .tier-pill {
 }
 
 .page-home .stats-strip,
+.page-home .index-explorer-card,
 .page-home .overview-intro-card,
 .page-home .company-search-card,
 .page-home .overview-breakdown-card,
@@ -2594,6 +2595,7 @@ body.page-social .tier-pill {
 }
 
 .page-home .stats-strip::after,
+.page-home .index-explorer-card::after,
 .page-home .overview-intro-card::after,
 .page-home .company-search-card::after,
 .page-home .overview-breakdown-card::after,
@@ -2615,6 +2617,7 @@ body.page-social .tier-pill {
 }
 
 .page-home .stats-strip > .wrap,
+.page-home .index-explorer-card > *,
 .page-home .overview-intro-card > *,
 .page-home .company-search-card > *,
 .page-home .overview-breakdown-card > *,
@@ -2637,6 +2640,99 @@ body.page-social .tier-pill {
 .overview-intro-card {
   margin-bottom: 20px;
   padding: 22px 24px;
+}
+
+.index-explorer-card {
+  margin-bottom: 20px;
+  padding: 22px;
+}
+
+.index-explorer-head {
+  align-items: flex-start;
+}
+
+.index-view-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 18px;
+}
+
+.index-view-tab {
+  min-height: 42px;
+  border: 1px solid rgba(47, 139, 87, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--ink-soft);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.index-view-tab:hover,
+.index-view-tab.active {
+  border-color: rgba(47, 139, 87, 0.34);
+  background: rgba(232, 245, 234, 0.92);
+  color: #24553a;
+  box-shadow: 0 8px 18px rgba(16, 25, 43, 0.045);
+}
+
+.index-explorer-toolbar {
+  margin: 0 0 16px;
+}
+
+.index-explorer-table-card {
+  box-shadow: none;
+}
+
+.index-explorer-table {
+  min-width: 1120px;
+}
+
+.page-home .index-explorer-table th:nth-child(1),
+.page-home .index-explorer-table td:nth-child(1) {
+  width: 96px;
+}
+
+.page-home .index-explorer-table th:nth-child(2),
+.page-home .index-explorer-table td:nth-child(2) {
+  width: 28%;
+}
+
+.page-home .index-explorer-table th:nth-child(3),
+.page-home .index-explorer-table td:nth-child(3) {
+  width: 106px;
+}
+
+.page-home .index-explorer-table th:nth-child(4),
+.page-home .index-explorer-table td:nth-child(4) {
+  width: 16%;
+}
+
+.page-home .index-explorer-table th:nth-child(n+5),
+.page-home .index-explorer-table td:nth-child(n+5) {
+  width: 142px;
+}
+
+.pillar-card-button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pillar-card-button.active .pillar-card {
+  border-color: rgba(47, 139, 87, 0.28);
+  box-shadow:
+    0 12px 24px rgba(16, 25, 43, 0.05),
+    inset 0 0 0 1px rgba(47, 139, 87, 0.12);
 }
 
 .overview-intro-head {

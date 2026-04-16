@@ -101,6 +101,66 @@ function getDistributionChartSizing() {
 
 let distributionResizeBound = false;
 let distributionResizeTimer = null;
+let activeIndexView = "esg";
+let explorerSortCol = "rank";
+let explorerSortAsc = true;
+
+const INDEX_VIEWS = {
+  esg: {
+    label: "Full ESG",
+    title: "Full ESG Index",
+    scoreLabel: "ESG Exposure",
+    scoreKey: "ESG_Score",
+    rankLabel: "ESG Rank",
+    text: "Start with the full composite view, then switch into the domain mini indices for a closer look.",
+    columns: [
+      { key: "Environment_Score", label: "Environment" },
+      { key: "Social_Score", label: "Social" },
+      { key: "ESG_Score", label: "ESG Score", bold: true }
+    ]
+  },
+  environment: {
+    label: "Environment",
+    title: "Environment Mini Index",
+    scoreLabel: "Environment Exposure",
+    scoreKey: "Environment_Score",
+    rankLabel: "Env. Rank",
+    text: "A closer look at climate targets, transition investment, and climate reporting exposure.",
+    columns: [
+      { key: "Climate_Targets", label: "Climate Targets" },
+      { key: "Investment_Transition", label: "Investment & Transition" },
+      { key: "Climate_Reporting", label: "Climate Reporting" },
+      { key: "Environment_Score", label: "Environment Score", bold: true }
+    ]
+  },
+  social: {
+    label: "Social",
+    title: "Social Mini Index",
+    scoreLabel: "Social Exposure",
+    scoreKey: "Social_Score",
+    rankLabel: "Social Rank",
+    text: "A closer look at DEI targets and representation, programmes and memberships, and social incentives.",
+    columns: [
+      { key: "DEI_Targets_Representation", label: "DEI Targets" },
+      { key: "DEI_Programmes_Memberships", label: "Programmes & Memberships" },
+      { key: "Social_Incentives", label: "Social Incentives" },
+      { key: "Social_Score", label: "Social Score", bold: true }
+    ]
+  },
+  governance: {
+    label: "Governance",
+    title: "Governance Reference Index",
+    scoreLabel: "Governance Reference Exposure",
+    scoreKey: "Governance_Reference_Score",
+    rankLabel: "Gov. Rank",
+    text: "A reference view of governance-related signals embedded in reporting, assurance, oversight, and incentives.",
+    columns: [
+      { key: "Governance_Reporting_Assurance_Score", label: "Reporting & Assurance" },
+      { key: "Governance_Oversight_Incentives_Score", label: "Oversight & Incentives" },
+      { key: "Governance_Reference_Score", label: "Reference Score", bold: true }
+    ]
+  }
+};
 
 function buildSectorAverages(data) {
   const grouped = {};
@@ -117,6 +177,209 @@ function buildSectorAverages(data) {
       avgESG: mean(rows.map(r => r.ESG_Score))
     }))
     .sort((a, b) => a.avgESG - b.avgESG);
+}
+
+function getActiveIndexConfig() {
+  return INDEX_VIEWS[activeIndexView] || INDEX_VIEWS.esg;
+}
+
+function gradientColor(v) {
+  const x = Math.max(0, Math.min(1, Number(v) || 0));
+
+  if (x < 0.33) return "#4f9b63";
+  if (x < 0.66) return "#c6872f";
+  return "#d95d5d";
+}
+
+function metricMarkup(v, bold = false) {
+  const value = Math.max(0, Math.min(1, Number(v) || 0));
+  const color = gradientColor(value);
+
+  return `
+    <div class="metric-stack">
+      <div class="tiny-track">
+        <div class="tiny-fill" style="width:${value * 100}%; background:${color};"></div>
+      </div>
+      <div class="${bold ? "score-value" : "pct"}" style="color:${color}">
+        ${fmtPct(value)}
+      </div>
+    </div>
+  `;
+}
+
+function rankRowsBy(data, scoreKey) {
+  return [...data]
+    .sort((a, b) => (Number(a[scoreKey]) || 0) - (Number(b[scoreKey]) || 0))
+    .map((row, index) => ({ ...row, rank: index + 1 }));
+}
+
+function setupIndexFilters(data) {
+  const sectorFilter = document.getElementById("indexSectorFilter");
+  const searchInput = document.getElementById("indexSearchInput");
+  const tierFilter = document.getElementById("indexTierFilter");
+
+  if (sectorFilter && sectorFilter.options.length <= 1) {
+    uniqueSectors().forEach(sector => {
+      const opt = document.createElement("option");
+      opt.value = sector;
+      opt.textContent = sector;
+      sectorFilter.appendChild(opt);
+    });
+  }
+
+  [searchInput, sectorFilter, tierFilter].forEach(control => {
+    control?.addEventListener("input", () => renderIndexExplorer(data));
+    control?.addEventListener("change", () => renderIndexExplorer(data));
+  });
+}
+
+function setupIndexViewButtons(data) {
+  document.querySelectorAll("[data-index-view]").forEach(button => {
+    button.addEventListener("click", () => {
+      const nextView = button.dataset.indexView;
+      if (!INDEX_VIEWS[nextView]) return;
+
+      activeIndexView = nextView;
+      explorerSortCol = "rank";
+      explorerSortAsc = true;
+      renderSelectedIndex(data);
+
+      document.getElementById("indexExplorer")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  });
+}
+
+function filteredExplorerRows(data, config) {
+  const q = document.getElementById("indexSearchInput")?.value.toLowerCase().trim() || "";
+  const sector = document.getElementById("indexSectorFilter")?.value || "";
+  const tier = document.getElementById("indexTierFilter")?.value || "";
+
+  const ranked = rankRowsBy(data, config.scoreKey).filter(row => {
+    const score = Number(row[config.scoreKey]) || 0;
+    const matchesQuery =
+      !q ||
+      row.Company.toLowerCase().includes(q) ||
+      row.Ticker.toLowerCase().includes(q);
+    const matchesSector = !sector || row.Sector === sector;
+    const matchesTier = !tier || tierKey(score) === tier;
+
+    return matchesQuery && matchesSector && matchesTier;
+  });
+
+  return ranked.sort((a, b) => {
+    const av = explorerSortCol === "tier"
+      ? tierLabel(a[config.scoreKey])
+      : explorerSortCol === "rank"
+        ? a.rank
+        : a[explorerSortCol];
+    const bv = explorerSortCol === "tier"
+      ? tierLabel(b[config.scoreKey])
+      : explorerSortCol === "rank"
+        ? b.rank
+        : b[explorerSortCol];
+
+    if (!isNaN(Number(av)) && !isNaN(Number(bv)) && av !== "" && bv !== "") {
+      return explorerSortAsc ? Number(av) - Number(bv) : Number(bv) - Number(av);
+    }
+
+    return explorerSortAsc
+      ? String(av).localeCompare(String(bv))
+      : String(bv).localeCompare(String(av));
+  });
+}
+
+function renderIndexExplorer(data) {
+  const config = getActiveIndexConfig();
+  const title = document.getElementById("indexExplorerTitle");
+  const text = document.getElementById("indexExplorerText");
+  const headRow = document.getElementById("indexExplorerHeadRow");
+  const body = document.getElementById("indexExplorerBody");
+
+  if (title) title.textContent = config.title;
+  if (text) text.textContent = config.text;
+  if (!headRow || !body) return;
+
+  const headers = [
+    { key: "rank", label: config.rankLabel },
+    { key: "Company", label: "Company" },
+    { key: "Ticker", label: "Ticker" },
+    { key: "Sector", label: "Sector" },
+    ...config.columns,
+    { key: "tier", label: "Tier" }
+  ];
+
+  headRow.innerHTML = headers.map(header => `
+    <th>
+      <button class="header-cell" type="button" data-sort="${header.key}">
+        ${header.label}
+      </button>
+    </th>
+  `).join("");
+
+  headRow.querySelectorAll("[data-sort]").forEach(button => {
+    button.addEventListener("click", () => {
+      const col = button.dataset.sort;
+      if (explorerSortCol === col) {
+        explorerSortAsc = !explorerSortAsc;
+      } else {
+        explorerSortCol = col;
+        explorerSortAsc = col === "rank" || col === config.scoreKey;
+      }
+      renderIndexExplorer(data);
+    });
+  });
+
+  const rows = filteredExplorerRows(data, config);
+  body.innerHTML = rows.map(row => {
+    const score = Number(row[config.scoreKey]) || 0;
+    const tier = tierKey(score);
+
+    return `
+      <tr class="ranking-row" onclick="window.location.href='profile.html?ticker=${encodeURIComponent(row.Ticker)}'">
+        <td><div class="rank-cell"><div class="rank-badge rank-tier-${tier}">${row.rank}</div></div></td>
+        <td>
+          <div class="company-cell">
+            <div class="company-name">
+              <img src="assets/images/${row.Ticker.toUpperCase()}.png" alt="${row.Company} logo" class="company-logo" onerror="this.style.display='none'">
+              <span>${row.Company}</span>
+            </div>
+          </div>
+        </td>
+        <td><div class="ticker-cell"><span class="ticker-badge">${row.Ticker}</span></div></td>
+        <td><div class="sector-cell"><span class="sector-name">${row.Sector}</span></div></td>
+        ${config.columns.map(column => `
+          <td><div class="metric-cell">${metricMarkup(row[column.key], column.bold)}</div></td>
+        `).join("")}
+        <td><div class="tier-cell"><span class="tier-pill tier-${tier}">${tierLabel(score)}</span></div></td>
+      </tr>
+    `;
+  }).join("");
+}
+
+function renderSelectedIndex(data) {
+  const config = getActiveIndexConfig();
+
+  document.querySelectorAll(".index-view-tab").forEach(button => {
+    const isActive = button.dataset.indexView === activeIndexView;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  document.querySelectorAll(".pillar-card-button").forEach(button => {
+    button.classList.toggle("active", button.dataset.indexView === activeIndexView);
+  });
+
+  const leaderboardText = document.getElementById("overviewLeaderboardText");
+  if (leaderboardText) {
+    leaderboardText.textContent = `The top 3 companies with the least and most ${config.scoreLabel.toLowerCase()} under the selected view.`;
+  }
+
+  renderIndexExplorer(data);
+  renderLeaderboard(data, config);
+  renderDistributionChart(data, config);
 }
 
 function setupCompanySearch(data) {
@@ -246,51 +509,58 @@ function renderOverviewStats(data) {
 function renderBreakdownCards(data) {
   const envAvg = mean(data.map(d => d.Environment_Score));
   const socAvg = mean(data.map(d => d.Social_Score));
+  const govAvg = mean(data.map(d => d.Governance_Reference_Score));
   const esgAvg = mean(data.map(d => d.ESG_Score));
 
   const envAvgPill = document.getElementById("envAvgPill");
   const socAvgPill = document.getElementById("socAvgPill");
+  const govAvgPill = document.getElementById("govAvgPill");
   const esgAvgPill = document.getElementById("esgAvgPill");
 
   const envAvgBar = document.getElementById("envAvgBar");
   const socAvgBar = document.getElementById("socAvgBar");
+  const govAvgBar = document.getElementById("govAvgBar");
   const esgAvgBar = document.getElementById("esgAvgBar");
 
   if (envAvgPill) envAvgPill.textContent = `${fmtPct(envAvg)} avg.`;
   if (socAvgPill) socAvgPill.textContent = `${fmtPct(socAvg)} avg.`;
+  if (govAvgPill) govAvgPill.textContent = `${fmtPct(govAvg)} avg.`;
   if (esgAvgPill) esgAvgPill.textContent = `${fmtPct(esgAvg)} avg.`;
 
   if (envAvgBar) envAvgBar.style.width = `${envAvg * 100}%`;
   if (socAvgBar) socAvgBar.style.width = `${socAvg * 100}%`;
+  if (govAvgBar) govAvgBar.style.width = `${govAvg * 100}%`;
   if (esgAvgBar) esgAvgBar.style.width = `${esgAvg * 100}%`;
 }
 
-function renderLeaderboard(data) {
+function renderLeaderboard(data, config = getActiveIndexConfig()) {
   const wrap = document.getElementById("overviewLeaderboard");
   if (!wrap) return;
 
-  const lowest = [...data]
-    .sort((a, b) => a.ESG_Score - b.ESG_Score)
+  const scoreKey = config.scoreKey;
+  const ranked = rankRowsBy(data, scoreKey);
+  const lowest = [...ranked]
+    .sort((a, b) => a[scoreKey] - b[scoreKey])
     .slice(0, 3);
 
-  const highest = [...data]
-    .sort((a, b) => b.ESG_Score - a.ESG_Score)
+  const highest = [...ranked]
+    .sort((a, b) => b[scoreKey] - a[scoreKey])
     .slice(0, 3);
 
   wrap.innerHTML = `
     <div class="leaderboard-section worst-section">
       <h3>Worst Performers</h3>
-      ${highest.map((d, i) => `
+      ${highest.map((d) => `
         <a href="profile.html?ticker=${encodeURIComponent(d.Ticker)}" style="text-decoration: none; color: inherit;">
           <div class="lb-row" style="cursor: pointer;">
-            <div class="lb-rank worst-rank">${100 - i}</div>
+            <div class="lb-rank worst-rank">${d.rank}</div>
             <div class="lb-company">
               <img src="assets/images/${d.Ticker.toUpperCase()}.png" alt="${d.Company} logo" class="lb-logo" onerror="this.style.display='none'">
               <div class="name">${d.Company}</div>
               <div class="meta">${d.Sector}</div>
             </div>
             <div class="lb-score">
-              <div class="value worst-value">${fmtPct(d.ESG_Score)}</div>
+              <div class="value worst-value">${fmtPct(d[scoreKey])}</div>
               <div class="ticker">${d.Ticker}</div>
             </div>
           </div>
@@ -299,17 +569,17 @@ function renderLeaderboard(data) {
     </div>
     <div class="leaderboard-section best-section">
       <h3>Best Performers</h3>
-      ${lowest.map((d, i) => `
+      ${lowest.map((d) => `
         <a href="profile.html?ticker=${encodeURIComponent(d.Ticker)}" style="text-decoration: none; color: inherit;">
           <div class="lb-row" style="cursor: pointer;">
-            <div class="lb-rank best-rank">${i + 1}</div>
+            <div class="lb-rank best-rank">${d.rank}</div>
             <div class="lb-company">
               <img src="assets/images/${d.Ticker.toUpperCase()}.png" alt="${d.Company} logo" class="lb-logo" onerror="this.style.display='none'">
               <div class="name">${d.Company}</div>
               <div class="meta">${d.Sector}</div>
             </div>
             <div class="lb-score">
-              <div class="value best-value">${fmtPct(d.ESG_Score)}</div>
+              <div class="value best-value">${fmtPct(d[scoreKey])}</div>
               <div class="ticker">${d.Ticker}</div>
             </div>
           </div>
@@ -319,13 +589,13 @@ function renderLeaderboard(data) {
   `;
 }
 
-function renderDistributionChart(data) {
+function renderDistributionChart(data, config = getActiveIndexConfig()) {
   const chartEl = document.getElementById("overviewDistributionChart");
   const chartTitleEl = document.getElementById("overviewDistributionTitle");
   const chartSubtitleEl = document.getElementById("overviewDistributionSubtitle");
   if (!chartEl) return;
 
-  const scores = data.map(d => Number(d.ESG_Score) || 0);
+  const scores = data.map(d => Number(d[config.scoreKey]) || 0);
   const avgScore = mean(scores);
   const medianScore = median(scores);
   const bins = buildDistributionBins(scores, 0, 1, 10);
@@ -336,7 +606,7 @@ function renderDistributionChart(data) {
   const avgLabelY = maxCount + 0.42;
   const medianLabelY = meanAndMedianAreClose ? Math.max(maxCount - 1.2, 0.95) : Math.max(maxCount - 0.4, 1);
 
-  if (chartTitleEl) chartTitleEl.textContent = "Distribution of ESG Exposure";
+  if (chartTitleEl) chartTitleEl.textContent = `Distribution of ${config.scoreLabel}`;
   if (chartSubtitleEl) chartSubtitleEl.innerHTML = subtitle;
 
   Plotly.react(
@@ -360,7 +630,7 @@ function renderDistributionChart(data) {
             width: 1
           }
         },
-        hovertemplate: "%{customdata[0]}-%{customdata[1]} ESG exposure<br>%{customdata[2]} companies<extra></extra>"
+        hovertemplate: `%{customdata[0]}-%{customdata[1]} ${config.scoreLabel.toLowerCase()}<br>%{customdata[2]} companies<extra></extra>`
       }
     ],
     {
@@ -439,7 +709,7 @@ function renderDistributionChart(data) {
       },
       xaxis: {
         title: {
-          text: "ESG Exposure Score",
+          text: `${config.scoreLabel} Score`,
           font: {
             size: sizing.axisTitleSize,
             color: "#667085"
@@ -486,7 +756,7 @@ function renderDistributionChart(data) {
   if (!distributionResizeBound) {
     window.addEventListener("resize", () => {
       window.clearTimeout(distributionResizeTimer);
-      distributionResizeTimer = window.setTimeout(() => renderDistributionChart(data), 120);
+      distributionResizeTimer = window.setTimeout(() => renderDistributionChart(data, getActiveIndexConfig()), 120);
     });
     distributionResizeBound = true;
   }
@@ -503,8 +773,9 @@ function initOverviewPage() {
   renderHeroSignals(cappedData);
   renderOverviewStats(cappedData);
   renderBreakdownCards(cappedData);
-  renderLeaderboard(cappedData);
-  renderDistributionChart(cappedData);
+  setupIndexFilters(cappedData);
+  setupIndexViewButtons(cappedData);
+  renderSelectedIndex(cappedData);
 }
 
 document.addEventListener("DOMContentLoaded", initOverviewPage);
