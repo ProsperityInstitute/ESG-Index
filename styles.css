@@ -261,6 +261,54 @@ header {
     inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
+.newsletter-nav {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 252px;
+  border: 1px solid rgba(208, 216, 206, 0.95);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow:
+    0 10px 20px rgba(16, 25, 43, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  overflow: hidden;
+}
+
+.newsletter-nav input {
+  width: 142px;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: 10px 4px 10px 14px;
+  font: inherit;
+  font-size: 13px;
+}
+
+.newsletter-nav input::placeholder {
+  color: var(--ink-faint);
+}
+
+.newsletter-nav input:focus {
+  box-shadow: inset 0 -3px 0 rgba(47, 139, 87, 0.18);
+}
+
+.newsletter-nav button {
+  align-self: stretch;
+  border: 0;
+  border-left: 1px solid rgba(208, 216, 206, 0.78);
+  background: linear-gradient(180deg, #ffffff 0%, var(--green-faint) 100%);
+  color: #1f5a44;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: default;
+  white-space: nowrap;
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -2441,6 +2489,10 @@ body.page-social .score-table th:nth-child(8) .header-cell {
     justify-content: flex-start;
   }
 
+  .newsletter-nav {
+    width: min(100%, 360px);
+  }
+
   #profileStatsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2552,6 +2604,16 @@ body.page-social .score-table th:nth-child(8) .header-cell {
   .nav-links a {
     padding: 8px 12px;
     font-size: 12px;
+  }
+
+  .newsletter-nav {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .newsletter-nav input {
+    flex: 1 1 auto;
+    width: auto;
   }
 
   .btn {
