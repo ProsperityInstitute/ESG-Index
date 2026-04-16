@@ -18,6 +18,7 @@
       </a>
       <nav class="nav-links">
         <a href="index.html" class="active">Home</a>
+        <a href="esg.html">Full ESG Index</a>
         <a href="sectors.html">Sectors</a>
         <a href="methodology.html">Methodology</a>
         <a href="companies.html">Company Directory</a>
@@ -38,7 +39,7 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#indexExplorer" class="btn btn-primary">View Index</a>
+          <a href="esg.html" class="btn btn-primary">View Rankings &rarr;</a>
           <a href="methodology.html" class="btn btn-secondary">How It Works</a>
         </div>
       </div>
@@ -60,50 +61,6 @@
 
   <section class="page">
     <div class="wrap">
-      <div class="card index-explorer-card" id="indexExplorer">
-        <div class="section-head overview-feature-head index-explorer-head">
-          <div>
-            <h2 id="indexExplorerTitle">Full ESG Index</h2>
-            <p id="indexExplorerText">
-              Start with the full composite view, then switch into the domain mini indices for a closer look.
-            </p>
-          </div>
-        </div>
-
-        <div class="index-view-tabs" aria-label="Choose index view">
-          <button class="index-view-tab active" type="button" data-index-view="esg">Full ESG</button>
-          <button class="index-view-tab" type="button" data-index-view="environment">Environment</button>
-          <button class="index-view-tab" type="button" data-index-view="social">Social</button>
-          <button class="index-view-tab" type="button" data-index-view="governance">Governance</button>
-        </div>
-
-        <div class="toolbar index-explorer-toolbar">
-          <input class="control" id="indexSearchInput" placeholder="Search company or ticker..." />
-          <select class="control" id="indexSectorFilter">
-            <option value="">All sectors</option>
-          </select>
-          <select class="control" id="indexTierFilter">
-            <option value="">All tiers</option>
-            <option value="best">Best</option>
-            <option value="good">Good</option>
-            <option value="moderate">Moderate</option>
-            <option value="poor">Poor</option>
-            <option value="wasteful">Wasteful</option>
-          </select>
-        </div>
-
-        <div class="table-card index-explorer-table-card">
-          <div class="table-wrap">
-            <table class="score-table index-explorer-table">
-              <thead class="table-header">
-                <tr id="indexExplorerHeadRow"></tr>
-              </thead>
-              <tbody class="table-body" id="indexExplorerBody"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
       <div class="card overview-intro-card">
         <div class="section-head overview-feature-head overview-intro-head">
           <div>
@@ -146,7 +103,7 @@
           </div>
 
           <div class="pillar-stack">
-            <button type="button" class="pillar-card-link pillar-card-button" data-index-view="environment">
+            <a href="rankings.html" class="pillar-card-link">
               <div class="pillar-card">
                 <div class="pillar-top">
                   <div class="pillar-title">
@@ -162,9 +119,9 @@
                   Climate Targets, Investment &amp; Transition, and Climate Reporting.
                 </div>
               </div>
-            </button>
+            </a>
 
-            <button type="button" class="pillar-card-link pillar-card-button" data-index-view="social">
+            <a href="social.html" class="pillar-card-link">
               <div class="pillar-card">
                 <div class="pillar-top">
                   <div class="pillar-title">
@@ -180,27 +137,9 @@
                   DEI Targets &amp; Representation, Programmes &amp; Memberships, and Social Incentives.
                 </div>
               </div>
-            </button>
+            </a>
 
-            <button type="button" class="pillar-card-link pillar-card-button" data-index-view="governance">
-              <div class="pillar-card">
-                <div class="pillar-top">
-                  <div class="pillar-title">
-                    <span>Governance Reference</span>
-                    <span class="pill">G</span>
-                  </div>
-                  <span class="pill" id="govAvgPill">0.0% avg.</span>
-                </div>
-                <div class="progress red">
-                  <span id="govAvgBar" style="width:0%"></span>
-                </div>
-                <div class="pillar-note">
-                  Reporting, assurance, oversight, and incentive-related reference signals.
-                </div>
-              </div>
-            </button>
-
-            <button type="button" class="pillar-card-link pillar-card-button" data-index-view="esg">
+            <a href="esg.html" class="pillar-card-link">
               <div class="pillar-card">
                 <div class="pillar-top">
                   <div class="pillar-title">
@@ -216,7 +155,7 @@
                   Composite built from the live Index.
                 </div>
               </div>
-            </button>
+            </a>
           </div>
 
           <div class="overview-distribution-block">
@@ -232,8 +171,9 @@
           <div class="section-head overview-feature-head">
             <div>
               <h2>ESG Exposure Performance</h2>
-              <p id="overviewLeaderboardText">The top 3 companies with the least and most ESG intensity under the current public model.</p>
+              <p>The top 3 companies with the least and most ESG intensity under the current public model. Please visit the Rankings Page for more insight.</p>
             </div>
+            <a href="esg.html" class="section-link">All rankings &rarr;</a>
           </div>
 
           <div class="leaderboard-list" id="overviewLeaderboard"></div>
