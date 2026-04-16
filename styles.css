@@ -207,6 +207,7 @@ header {
 
 /* Environment button — slightly darker green */
 .nav-links a[href="index.html"],
+.nav-links a[href="esg.html"],
 .nav-links a[href="methodology.html"],
 .nav-links a[href="companies.html"],
 .nav-links a[href="sectors.html"] {
@@ -224,11 +225,6 @@ header {
     0 10px 20px rgba(16, 25, 43, 0.06),
     0 0 0 1px rgba(36, 85, 58, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.85);
-}
-
-/* Full ESG in the global nav uses the shared green underline. */
-.nav-links a[href="esg.html"] {
-  --nav-pill-accent: var(--green);
 }
 
 .nav-links a[href="esg.html"]:hover,
@@ -1465,7 +1461,27 @@ a:hover .lb-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin: 8px 0 20px;
+}
+
+.domain-index-switcher {
   margin: 18px 0 20px;
+}
+
+.domain-index-switcher h2 {
+  margin: 0 0 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.12;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.domain-index-switcher p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .domain-index-tabs .domain-index-tab {
