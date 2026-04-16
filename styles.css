@@ -226,16 +226,16 @@ header {
     inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
-/* ESG button always purple when hovered / active */
+/* Full ESG in the global nav uses the shared green underline. */
 .nav-links a[href="esg.html"] {
-  --nav-pill-accent: #7a56db;
+  --nav-pill-accent: var(--green);
 }
 
 .nav-links a[href="esg.html"]:hover,
 .nav-links a[href="esg.html"].active {
   box-shadow:
     0 10px 20px rgba(16, 25, 43, 0.06),
-    0 0 0 1px rgba(91, 61, 178, 0.08),
+    0 0 0 1px rgba(36, 85, 58, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
@@ -1469,27 +1469,88 @@ a:hover .lb-row {
 }
 
 .domain-index-tabs .domain-index-tab {
+  --nav-pill-bg: rgba(255, 255, 255, 0.62);
+  --nav-pill-border: rgba(208, 216, 206, 0.9);
+  --nav-pill-ink: var(--ink-soft);
+  --nav-pill-accent: var(--green);
+  --nav-pill-soft: #eef2f7;
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  border: 1px solid var(--line-dark);
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--ink-soft);
-  padding: 10px 14px;
-  font-size: 14px;
-  font-weight: 800;
+  border-radius: 999px;
+  border: 1px solid var(--nav-pill-border);
+  background: var(--nav-pill-bg);
+  color: var(--nav-pill-ink);
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+}
+
+.domain-index-tabs .domain-index-tab::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 7px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--nav-pill-accent);
+  opacity: 0;
+  transform: scaleX(0.25);
+  transform-origin: center;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--nav-pill-accent) 30%, transparent);
+  transition:
+    background 0.22s ease,
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
 .domain-index-tabs .domain-index-tab:hover,
 .domain-index-tabs .domain-index-tab.active {
-  border-color: rgba(47, 139, 87, 0.34);
-  background: rgba(232, 245, 234, 0.92);
-  color: #24553a;
-  box-shadow: 0 8px 18px rgba(16, 25, 43, 0.045);
+  background: linear-gradient(180deg, #ffffff 0%, var(--nav-pill-soft) 100%);
+  border-color: #d6ddd5;
+  color: #4f5d75;
+  box-shadow:
+    0 10px 20px rgba(16, 25, 43, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  transform: translateY(-1px);
+}
+
+.domain-index-tabs .domain-index-tab:hover::after,
+.domain-index-tabs .domain-index-tab.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.domain-index-tabs .domain-index-tab[href="esg.html"] {
+  --nav-pill-accent: var(--esg);
+  --nav-pill-soft: var(--esg-faint);
+}
+
+.domain-index-tabs .domain-index-tab[href="rankings.html"] {
+  --nav-pill-accent: var(--green);
+  --nav-pill-soft: var(--green-faint);
+}
+
+.domain-index-tabs .domain-index-tab[href="social.html"] {
+  --nav-pill-accent: var(--social);
+  --nav-pill-soft: var(--social-faint);
+}
+
+.domain-index-tabs .domain-index-tab[href="governance.html"] {
+  --nav-pill-accent: var(--red);
+  --nav-pill-soft: #fff1f1;
 }
 
 /* =========================
